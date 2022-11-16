@@ -1,0 +1,45 @@
+Q: What is completablefuture?
+Q: What is SOLID principle?
+Q: difference between cached thread pool vs fixed thread pool
+Q: what is functional interface? can you have default method in function interface?
+Q: can you override default method, static method or final method
+Q: difference java 8, map and flatmap
+Q: what is java memory structure? What is heap structures
+Q: types of garbage collection?
+Q: difference fork vs join
+Q: Java 8  new features? Java 11 new features? Java 15 new features?
+Q: what is lambda expression? why do we use it
+Q: advantage and disadvantage of microservice
+Q: What are OOP concepts
+Q: How hashMap works internally? What is collision? How hashset works internally?
+Q: If frontend request becomes very slow, how do you debug?
+Q: how do you secure your application?
+Q: What is dependency injection?
+Q: What are the common annotations you used in spring boot
+Q: What is MVC and web service?
+Q: Spring boot advantages
+Q: How do you connect database with Spring boot
+Q: How do you manage and rollback transactions in microservice
+Q: Difference between relational and NoSQL database? How to choose
+Q: Difference between MongoDB and Cassandra
+Q: What are Java built-in functional interfaces
+Q: Difference between HashTable and HashMap
+Q: What is fail fast and fail slow.
+Q: What is concurrent Modfication exception
+Q: Diff between ConcurrentHashMap and SynchronizedMap
+Q: What is REST rate limit?
+Q: What is java multi threading, have you worked on it
+Q: Difference between synchornized and atomic lock
+Q: If two threads change data, how to make sure no conflicts. Isolation levels
+Q: Can you override main method
+Q: What is threadlocal and volatile
+Q: What is hibernate cache
+Q: Kafka how to restart from the data before the cluster failure
+Q: Kafka how to maintain message queue
+Q: Kafka how to define data types, what is avro schema?
+Q: Kafka what is acknowledge values
+Q: Are you familar with kubernetes and docker
+Q: What are the AWS features you have used.
+Q: How do you cache in microservice
+Q: What is difference between HashMap and TreeMap, advantage of TreeMap
+Q: What is cross join. How to make cross join same result as inner join? (use where on cross join)

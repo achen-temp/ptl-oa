@@ -1,0 +1,29 @@
+1.  choose correct statement (CanFly, HasWings, Falcon)
+    A: The code compiles without any issues
+2.  what behavior (CanClimb, CanClimbTrees, EasterChipmunk)
+    A:  The code will not compile because of line 8
+3:  two BitSets code 1000001, 1111111
+    A: Output1 prints 1001001
+       Output2 prints 1000111
+       Output3 prints 1000111
+4:  REST API - MVC5 "StudentRESTService" to get list of students asyncrhonously
+    A: httpClient.GetAsync(uri);
+5.  client and server side of Song REST API.
+    A:  entity
+        MediaType.APPLICATION_JSON
+        get()
+6.  Kafka: command to create and change topic
+    A: (correct answers should have --create & --alter,  !!!!there is no --modify)
+7.  StartStreamExample - startStream
+    A: run() {kafkaStreams.close(); CDlatch.countDown();}
+       try{ kafkaStreams.start(); CDlatch.await()}
+8.  Create a consumer in kafka
+    A: KafkaConsumer<String,String> consumer= new KafkaConsumer<String,String>(properties);
+       consumer.subscribe(Arrays.asList(topic));
+9.  demonstrate a caching technique with java.cache.package
+    A:  CachingProvider cacheProvider = Caching.getCachingProvider();
+        Cache<String, String> cache = cacheManager.createCache("cache_id", config);
+        cache.put("key", "value");
+10. REST API /user
+    A:  POST /user
+        name = John & age = 25

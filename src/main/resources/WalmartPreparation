@@ -1,0 +1,148 @@
+1. Advantage of Spring boot
+   I have been using Spring boot for a while. There are several main advantages of Spring boot. First, it is
+   standalone applications, it has server tomcat built in, so you can just run it directly, you dont need to deploy
+   to the server and restart the server. It handles internally. 2nd benefit is the auto configuration, For example,
+   if you provide the data source in application.properties, it will just connect the database for you. You dont need
+   to write JDBC connection at all, you can just create repository and forgot about the underlying data fetching.
+   3rd benefit is the starters spring boot provide. It resolves the dependency conflicts issues, for example, the web starter
+   has tomcat inside and also contains Rest API, dependency injection and other basics, you dont need to worry about versions,
+   just import one web starter, it contains most of the features you need. Also, Spring boot try to get rid of XML,
+   so everything will be in annotations, will be less configurations.
+2. How to disable auto configuration in spring boot
+    We can add exclude in the @EnableAutoConfiguration annotation. like if you dont want to auto configure the database connection,
+    you can just do: @EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
+3. What is IOC/dependency injection in spring
+    That is the most basic module of spring. Without spring, if you want to use another bean in one class, you have to create instance
+    by yourself by calling the constructor. But with spring, you dont need to do that, you just use @component or @bean and other spring
+    annotations to let spring manage the beans for you, so spring has a bucket called bean factory, it manages all the beans there for you,
+    if you need to inject a bean, you just use @autowired, spring will find the instance and wire it for you. So you are giving the control
+    of creating instance to spring, that is why it is also called inversion of control.
+4. AOP in spring
+    AOP is aspect oriented programming. It use Aspects, Pointcut and Advice to find the methods in your main program. For example,
+    if you want to log a message whenever a service level method is called, you can set your pointcut expression to match all the service methods,
+    the advice to be before or after or around or AfterThrowing an exception, And put them in an aspect class. So whenever this service method
+    is called, it will execute the AOP method as well.
+5. Soap VS Restful API
+    Yes, i know them. They are both web services. We used Soap long time ago, now we just use REST. For Soap, it is based on XML by default,
+    it uses the WSDL (wisdow) to config the endpoints and data schema. It is heavier, it can be stateful, so you can make requests depending on each other
+    and share data between each others. But REST is totally different, it is based on JSON format by default. It is also based on HTTP methods,
+    like GET, PUT, POST, DELETE, and it does not carry any status at all. Each reqeust is independent from each other.
+6. Do you know CICD pipeline
+    Yes, I have some experience with CICD pipeline, it means continuous integration and continues deployment. For example, when our developer
+    commits a code, it will triggers the CICD pipeline script which is written and managed by Jenkins. the script will have some configurations about credentials
+    and environments, and also some definitions about branches and stages, for each branch, it has some command line steps, like package and build the code, and then deploy to the environment and run it,
+    it may also run the test cases. It could also have steps like if there is error, rollback.
+7. SQL vs NoSQL.
+    SQL is based on structure data, you have tables and columns, each table has primary key and constraints and index. They all use SQL language
+    NoSQL is all different, like Mongodb is document based, it is like file system, it has its own mongodb syntax.
+    Cassandra is column and column group based, it use CQL similar as SQL, it is partition based and good at handle large distributed data
+    There are also other NoSQL databses, like graph based and supports different APIs.
+    Basically, NoSQL is good and faster for very large dataset and good for un-structured data. They are based on CAP rules
+    But SQL is good for structure data and they are based on ACID (A, C, I, D) rules. One more thing is SQL is good for transactions, like if you
+    handle bank transactions, you'd better use SQL.
+8. HashMap mechanism,
+    HashMap internally is a list of bucket, each bucket is associated with one hashcode. In HashMap, there are to methods, equals and hashcode methods
+    So when you do a map.put, key, value pair, the Key will first be passed to hashcode method, so based on that hashcode, you will be able to locate a bucket,
+    inside that bucket, there are some entries whose keys share the same hashcode. that is called hash collision. Inside the bucket, we call the equals method,
+    the equals is to compare the keys with the given key, if you find same key, the value will be replaced, otherwise, the entry will be saved.
+9. Java 8 features
+    I used stream api, lambda expression, functional interface, optional etc
+    functional interface is interface that has only one abstract method, we can use lambda to implement this method
+10. completable future
+    it is advanced version of future object. With future object, we can wait for the callable results, but with completable future, we can build a task
+    chain. Like we can let one task to run if another task result come back.
+Q:  SOLID
+    S: single responsibility -  a class only does its own work, like employee class only has fields and methods regarding of employee, not other objects
+    O: open-close: a class should be open for inheritance, but close for modification
+    L: Liskov substitution - a child class should be substitutable by its parent class
+    I: interface segregation - you can implement multiple interfaces, but you only implement contains all the methods you need.
+    D: dependency inversion - the order or structure of dependency should not be changed, like child depends on parent, but parent should not depend on child.
+Q: cached thread pool vs fixed thread pool
+    Cached thread pool only creates new threads when needed, if there is previous threads already done the work, it will reuse that thread, it has better performance.
+    Fixed thread pool creates fixed number of threads no matter it will be used or not.
+Q:  functional interface, can it have default and static method, can you override default method
+    Functional interface has only one abstract method, you can use lambda to implement this abstarct method
+    It can have default method and static method.
+    You CAN override default method. if you have two interface with same default methods, then you have to override it so you know which one you will use.
+Q:  java 8  map vs flatmap
+    Flatmap is map plus flat function. It works on matrix, it will apply map on each row and then use flat to combine the results.
+Q:  java memory structure (heap structure)
+    Heap for objects (Yong, Old, Permanent generations)
+    New created objects will be in Young generation. They will stay there and went through some rounds of Garbage collection, after survival for many cycle of Garbage collection,
+    they will be moved to old generations. Objects in permanent generations are those system objects, like system metadata and static objects etc.
+Q:  types of garage collection
+    4 types
+       Serial Garbage collection: used in single thread environments, the GC will pause the main application thread
+       Parallel GC: GC use multiple threads to process at the same time. It still pause main thread
+       Concurrent Mark Sweep CMS GC: Does not pause main thread,
+       Garbage First G1 GC: For very large memory. It will divide heap into blocks and process them separately
+Q:  ForkJoinPool
+    It is a pool that uses fork and join. the Fork is to split the task into multiple subtasks, the join is to combine the completed subtasks back. It is like divide and conquer to
+    improve the performance.
+Q:  What is Work stealing algorithm in java
+    A: it is in the fork join pool. the Fork join pool uses work stealing algorithm. So if you have some threads already finished their work, they can
+    steal pending tasks from other threads work on them. This can help improve system performance.
+Q:  Advantage and drawback of microservices
+    *Advantage: 1. microservice is to split the one monolithic application into many independent services. Since the services are separated, you
+    can easily scale it up. Like if some services are super busy, you can make multiple copies to distribute the requests using load balancers,
+    so that the application is capable of handling very large amount of requests.
+    2. Since each service is rather independent, if you need to upgrade or release one service, you dont need downtime for other services. so customers
+    will not experience downtime of the whole application.
+    3. for each service, you may even use different tech stacks, as long as they communicate by the same rules, like using json based rest api.
+    4. system level failure is less, you can back up each servcies in different regions, so even one service is down, it wont affect other services
+    *Disadvantage: 1. since you have more services to manage, the cost will be up, like you need more servers and more DevOps team to maintain them
+    2. the communication between services could be lagging, they can never be as fast as communicating within one services
+    3. the system level things are hard to do than one application, like the cache, you will need to sync the cache cross services, you have to use
+    distributed cache. Also the data consistency could be an issues because each services are using their own database instance. Another thing is
+    the transaction managements, we will need to manage transactions cross services. the rollback will be not as straightforward as one application.
+Q:  what are important interfaces of Hibernate framework?
+    A: Session, SessionFactory, Configuration
+Q:  What is try-with-resources?
+    A: it is for the try-catch block. previously, we put everything in try block. but with try-with-resources, we can use try and bracket
+    and then in that bracket, we can add the resource, for example, try scanner.hasNext
+Q:  Saga pattern
+    Saga pattern is used in microservices. It is for manage the transctions in microservcie because the transactions will be across multiple services.
+    There are two types of Saga pattern, one is called event based, it is like you chain the services together, and one send event to another, you have
+    service chain to manage the transactions. Another is called orchestration or command based. You have a center service which only hanldes all the events
+    it will based on the events to redirect the next service.
+
+Q:  Maven dependencies conflict how to solve?
+    A: maven uses dependency tree, if there is one dependency with two versions both available, maven will use the one close to the root,
+    if both at the same tree level, it will use the first one found. So when there are conflicts, the best way to solve it is just lift
+    that dependency version to higher level, like you import it directly to the root level, then it will always be used since it has higher
+    level than other versions.
+
+Q:  Maven multi module projects
+    A: in multiple module projects, you have a parent POM and many children POM, the children pom will inherit the parent POM.
+    In the parent pom, you could define some dependencies to be used by all children modules, also you need to define modules tag
+    to include all children modules. In the children module, you need to include parent tag to tell who is the parent module.
+    In children, if you want to inherit parent dependencies you just add the entries no need to provide version, it will use parent versoin
+    if you want to change to another version, you just specify the new version number. if you want to exclude it, you can use exclude tag
+
+Q:  Spring bean lifecycle
+    A: When you start the IOC container, it will start the bean, so it will be 'bean instantiated', then you have 'Dependency injected' when you
+    inject the bean, then it will be 'init' and then use it and then 'destroy'
+
+Q:  Spring boot how to change to another server instead of tomcat?
+    A: We just need to let the main application class extends SpringBootServletInitializer or WebApplicationInitializer and then
+    package the application in to war file and deploy to the target application server.
+
+Q:  Difference between Unit test, Integration Test, E2E test and the tools used for them.
+
+
+
+1. what is java8 metaspace and how is it increased.
+2.  how to find the size of young generation in java (--XX:newRatio)
+3. what is blocking queue
+4. what is try-with-resources
+5. what is work-steal algorithms
+6. what is saga pattern
+7. difference between exception handler and global advice
+seralization vs externalization
+kafka seciryt
+parllel stream vs stream
+how dispatch servlet works
+how to create a custom annoation in spring
+how to configure multiple datasource in spring
+web server vs applcation server
+how to do ranking with java 8 stream api

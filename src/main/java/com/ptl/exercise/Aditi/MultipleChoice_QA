@@ -1,0 +1,108 @@
+1.  Java Architect - A java app is runining on tomcat. debug memory leak?
+    A: Enable GC logging and see where the GC spends most of its time collecting
+    A: Estimate the max memory that your program is using.
+    A: Tyr experiementing with collection algorithms
+    A: Install some VM plugins to upgrade
+    A: Estimate the median and peak memeory that your program should use.
+    A: Leave profile running for an extended period of time
+2.  Your organization is reating a new online storage service
+    A: Gather and clarify all requirements
+    A: Scalability needs
+    A: Interfaces definition
+    A: Storage requirements
+    A: Traceability matrix
+    A: Data flow diagrams
+3.  During the system design process using object oriented methodology..
+    A: False
+4.  Meaning of CAP theorem
+    A: Consistency, Availability, Partition Tolerance
+5.  You are required to create a system design for a sahred drive within your small org, best approach
+    A: Event passing
+6.  Consider following method, getLocks {synchornized(a){synchronzied(b)}..
+    A:
+7.  Java Microservice
+    A: @Min(value=10)
+       @NotBlank
+       @Length(min=7,max=7)
+8.  Song service
+    A: @Path("/update/{id}")
+9.  Four branches in github account, Spot the culprit section of the script
+    A: Both 4 & 5 -- ${params.select}
+10. @RunWith(SpringRunner.class) @SpringBootTest
+    A: SpringBootTest annotation by default spawns embedded server..
+    A: SpringBootTest annotation is required to create application context for the tests...
+    A: SpringBootTest annotation ensures that mock web environment is created for your tets.
+    A: RunWith annotation specifies test to run against beans versus mocks
+    A: @RunWith is required to enable annotation processing in the test file
+11. Complete the following WebhookEvent code by selecting appropriate drop-downs
+    A: return ResponseEntity.status(HttpStatus.FORBIDDEN).build()
+       ObjectMapper objectMapper = new ObjectMapper()
+       if(VERIFICATION.equalsIgnoreCase(webhookEvent.verification()))
+12. You have online shop developed microservice architecture. expect lot of users and traffic.
+    A: Deploy the container in ECS
+    A: Use Elastic Load Balancer to distribute traffic to containers
+    A: Enable auto scaling
+14. code snippet for searching the nearest 1 for each 0 in a binary matrix.
+    PART A: basic idea
+    A: Breadth First Search
+    PART B: fix the error
+    A: Array stepx should be {-1,0,1,0}
+    A: Array stepy should be {0,-1,0,1}
+15. Java: canHoop{} Frog, BrazilianMornedFrog, TurtuleFrog
+    A: Object
+    A: CanHoop
+    A: TurtleFrog
+    A: Frog
+16.  How can you provide BuildSpec file to a CodeBuild project?
+    A: You can override the default build spec file name and location and provide the new name and lcation..
+    A: By default, the build spec file must be named buildspec.yml and placed in the root of your source directory
+17. clusterRole to grand same permission as a Role
+    A: apiVersion: rbac.authorization.k8s.io/v1
+       kind: Role
+       metadata:
+          name: scret-reader
+       rules:
+        - apiGroups: [""]
+        #
+        #
+          resources: ["*"]
+          verbs:
+            -get -list -watch -create -update -patch -delete
+18. Your Kubernetes cluster has multiple worker nodes, but you notice a particular node has some anomaly
+    A: Set the node to be unscheduleable, then drain all pods from that node
+19. Kubernetes - deploy an ingress resoruce for Nginx
+    A: http:
+         paths:
+          -path: /testpath
+           pathType: Prefix
+           backend:
+             serviceName: nginx
+             servicePort: 80
+20. PostgreSQL - TABLE huge
+    A: Create materialized view and add index for the column view on it
+21: Docker - developer ask you to ensure the docker restart a specificed container if it fails
+    A: on-failure
+22: Docker - docker-compose code
+    A: docker -compose -f ${COMPOSE_FILE} run --rm docker build (?)
+       "bash ?? create-mysql-databases.sh" db-provisioner
+       docker -compose -f ${COMPOSE_FILE} run --rm ??
+       "bash ?? load-mysql-fiextures.sh" db-provisioner
+23: What will this java program print? MyClass{ m1, m2}
+    A: m1 & new name
+24: Spring Boot - identify the properteis for creating beans in spring boot 18
+    A: Instance IOC Method
+    A: Instance Factory Method
+    A: Static Factory Method
+    A: Data Factory Method
+    A: Factory Method
+25: Spring Boot - spring boot cloud provides an easy way to manage microservices..
+    A: @SpringBootApplication
+       @EnableEurekaServer
+26: Which of following commands is used to creating a checkpoint from a runnnig container
+    A: docker checkpoint create
+27: Which of the following are valid docker command?
+    A: docker build
+    A: docker checkpoint
+    A: docker top
+28: A cluster may want to have a dedicated manager node that does NOT serve as a worker node,
+    A: docker swarm join --availability=drain

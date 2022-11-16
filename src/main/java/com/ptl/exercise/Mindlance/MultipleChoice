@@ -1,0 +1,97 @@
+1. Collections.max(numberList)
+   Collections.min(numberList)
+   Collections.reverse(numberList)
+2. package
+   @SpringBootApplication
+   args
+3. private static
+   private
+   if(instance == null)...
+4. @Entity
+   @Id
+   @Transient
+5. @Rentention
+   @interface
+   extends
+6. System
+   System.config.
+   finalize
+   finalize
+7. MessageProducer, Producer
+   session
+   temp
+8. MessageListener
+   createConsumer
+   setMessageListener
+9. @Repository
+   @Query, value, =?1
+10. in frontend. skills-add.component.ts:
+line23: http.post<any>(newUrl + '/addSkills',skills);
+    in frontend. skills-edit.componet.ts:
+    line33: http.post<any>(newUrl + '/editSkills',candidate);
+    in frontend. app.module.ts:
+    router.navigate(['/candidate']);
+    Controller.java
+
+@RequestMapping(method = RequestMethod.POST, value = "/editSkill")
+public Candidate saveSkills(@RequestBody CandidateDTO candidate) {
+   Candidate c = candidateRepository.findByName(candidate.getName());
+   if (c != null) {
+       c.setName(candidate.getName());
+       c.setEmail(candidate.getEmail());
+       String[] skillsArray = candidate.getSkills().split(",");
+       List<Skills> allSkills = (List<Skills>) skillsRepository.findAll(); //抓紧超完就好了时间不够
+       c.setCandidateSkills(new ArrayList<>());
+       for (String skillsName : skillsArray) {
+           CandidateSkills cs = new CandidateSkills();
+           cs.setCandidate(c);
+           Skills oneSkill = allSkills.stream()
+                   .filter(s -> s.getName().equalsIgnoreCase(skillsName)).
+                   findFirst()
+                   .orElse(null);
+           if (oneSkill != null) {
+               cs.setSkills(oneSkill);
+           }
+           c.getCandidateSkills().add(cs);
+       }
+   }
+
+   return c;
+}
+
+@RequestMapping(method = RequestMethod.POST, value = "/addSkill")
+public Skills saveSkills(@RequestBody Skills skills) {
+
+   return skillsRepository.save(skills);
+}
+
+@RequestMapping(method = RequestMethod.GET, value = "/skills")
+public List<SkillsDTO> getSkills() {
+   //todo
+   List<SkillsDTO> lst2 = new ArrayList<>();
+   for (Skills s1 : (List<Skills>) skillsRepository.findAll()) {
+       SkillsDTO sdto = new SkillsDTO(s1.getId(), s1.getName(), s1.getDescription());
+       lst2.add(sdto);
+   }
+   return lst2;
+}
+
+
+//repositories folder also need to add some
+
+
+candidateRepository.java
+@Repository
+Candidate findByName(String name);
+
+CandidateSkillsRepository.java
+@Repository
+List<CandidateSkills> findByCsk_Candidates(Candidate c);
+
+SkillsRepository.java
+@Repository
+
+
+
+
+

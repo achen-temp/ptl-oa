@@ -1,0 +1,64 @@
+Round 1:
+Q. Java 8 features
+Q. completable future
+Q:  SOLID
+Q: cached thread pool vs fixed thread pool
+Q:  functional interface, can it have default and static method, can you override default method
+Q:  java 8  map vs flatmap
+Q:  java memory structure (heap structure)
+Q:  types of garage collection
+Q:  ForkJoinPool - how it works
+Q:  What is Work stealing algorithm in java
+Q:  Advantage and drawback of microservices
+Q:  What is try-with-resources?
+Q:  What is Saga pattern in microservices.
+1. what is java8 metaspace and how is it increased.
+2.  how to find the size of young generation in java (--XX:newRatio)
+3. what is blocking queue
+4. what is try-with-resources
+5. what is work-steal algorithms
+6. what is saga pattern
+7. difference between exception handler and global advice
+seralization vs externalization
+kafka seciryt
+parllel stream vs stream
+how dispatch servlet works
+how to create a custom annoation in spring
+how to configure multiple datasource in spring
+web server vs applcation server
+how to do ranking with java 8 stream api
+
+
+Round 2:
+1. Self intro and project intro
+2. HashMap vs TreeMap, benefit of treemap
+   A: TreeMap key is sorted, it is a binary search tree strucutre, so left smaller than root, and root smaller than right node
+   but hashmap key is not sorted at all. it is random order. So if you want to find if a key exists in the map, tree map will be faster
+   because it is O(logn) while hashmap you have to loop the entries, so it is O(n)
+    2.1)what is hash collision
+    A: two keys share the same hashcode, they will be in one same bucket.
+    2.2)what happens on hash collision
+    A: if you put a new entry with same key already exists in map, the value will be replaced, because map does not allow duplicate keys
+    but if two keys are different, they just have same hashcode, then both will be saved into the same bucket
+3. What is synchronized block?
+   A: synchroznied block is add synchronzied keyword on a block of code, when a thread is accessing this block, one particular object will be locked
+   it is faster than synchronized method, because synchornized method will lock the entire object that whole object
+4. What id deadlock and how to prevent it
+   A: 1) deadlock is two threads waiting for each other,
+   For example, if you need to transfer money from one account another. When thread A transfer from account 1 to account 2,
+   it will lock account 1 first to get money and then go to account 2 to deposit.. but in the meantime, thread B is transfer
+   money from account 2 to account 1, so it will lock account 2 first and then try to deposit to account 1. So thread A will
+   wait thread B to release lock on account 2 while thread B is waiting for thread A to release lock on account 1. so they are
+   just waiting for each other. that is deadlock
+   2) To prevent deadlock, first we can define atomic level resources, like we make the account atomicReference variable,
+   to make sure the operation is atmoic level so it will be threadSafe. Another way is we need to first check all the resources
+   that are needed to finish the transaction, we can either remove dependencies on each other, or we can lock them all.
+4. Java Memeory structure,
+    how to find heap size (young, old, permanent)
+5. Garbege collection, how it works in java 8
+6. What do you look for in the new project
+7. linear and non-linera java collections
+
+Round 3:
+1. Advantage and disadvantage of microservices
+2. ...
