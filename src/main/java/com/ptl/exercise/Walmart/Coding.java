@@ -192,8 +192,11 @@ public class Coding {
         return sb.toString();
     }
 
+    //Kaleb walmart
+
+
     public static void main(String[] args) {
-        String s = "zEalOY";
-        System.out.println(solve(s));
+        //String s = "zEalOY";
+        //System.out.println(solve(s));
     }
 }

@@ -1,5 +1,9 @@
 package com.ptl.exercise.Altimetrik;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 //print 1 to n in two thread, even and odd
 class MyRunnable implements Runnable {
     public int n;
@@ -74,9 +78,129 @@ class MyClass {
     }
 }
 
+class Kaleb_11212022 {
+    /**
+     * given N, find all consecutive combinations that sum to N
+     * given N = 5; return [{2,3},{5}]
+     */
+    public static List<List<Integer>> findSum(int N){
+        int p1 = 1;
+        int p2 = N % 2 == 0 ? N / 2 : ( (N+1) / 2);
+
+        List<List<Integer>> result = new ArrayList<>();
+        while(p1 < p2){
+            int sum = 0;
+            for(int i = p1; i <= p2; i++){
+                sum += i;
+                if(N == sum){
+                    List<Integer> list = new ArrayList<>();
+                    for(int k = p1; k <= i; k++){
+                        list.add(k);
+                    }
+                    result.add(list);
+                    break;
+                }
+                if(N < sum){
+                    break;
+                }
+            }
+            p1++;
+        }
+        result.add(Arrays.asList(N));
+        return result;
+    }
+
+    //given input array, {10,2,70,57,4,7}
+    //cannot use sort or queue
+    public static int[] order(int[] nums){
+        int[] result = new int[nums.length];
+        int k = 0;
+        int count = 0;
+        while(count < nums.length){
+            int min = findMin(nums);
+            result[k++] = min;
+            count++;
+            int max = findMax(nums);
+            result[k++] = max;
+            count++;
+        }
+        return result;
+    }
+
+    public static int findMax(int[] nums){
+        int max = Integer.MIN_VALUE;
+        int maxI = -1;
+        for(int i = 0; i < nums.length; i++){
+            if(nums[i] >= max && nums[i] != Integer.MAX_VALUE){
+                max = nums[i];
+                maxI = i;
+            }
+        }
+        nums[maxI] = Integer.MAX_VALUE;
+        return max;
+    }
+
+    public static int findMin(int[] nums){
+        int min = Integer.MAX_VALUE;
+        int minI = -1;
+        for(int i = 0; i < nums.length; i++){
+            if(nums[i] <= min && nums[i] != Integer.MIN_VALUE){
+                min = nums[i];
+                minI = i;
+            }
+        }
+        nums[minI] = Integer.MIN_VALUE;
+        return min;
+    }
+
+    //given input array, {10,2,70,57,4,7}
+    //cannot use sort or queue
+    //self implemented buble sort
+    public static int[] order2(int[] nums){
+        int[] result = new int[nums.length];
+
+        //self implement bubble sort
+        for(int i = 0; i < nums.length; i++){
+            for(int j = 1; j < nums.length; j++){
+                if(nums[j - 1] > nums[j]){ //swap with previous element
+                    int temp = nums[j - 1];
+                    nums[j - 1] = nums[j];
+                    nums[j] = temp;
+                }
+            }
+        }
+
+        //nums sorted now
+        int p1 = 0, p2 = nums.length - 1;
+        int k = 0;
+        while(p1 < p2){
+            result[k++] = nums[p1++];
+            result[k++] = nums[p2--];
+        }
+        if(p1 == p2){
+            result[k++] = nums[p1];
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("----output1---------");
+        int N = 9;
+        List<List<Integer>> result = findSum(N);
+        System.out.println(result);
+
+        System.out.println("----output2---------");
+
+        int[] nums2 = {10,2,70,57,4,7, 15};
+        int[] result2 = order2(nums2);
+        System.out.println(Arrays.toString(result2));
+    }
+
+}
+
 public class Coding {
 
-    //convert string number to integer "123 -> 123
+    //convert string number to integer "123" -> 123
     public static int convert(String s) {
         if (s == null || s.length() == 0) {
             return 0;
