@@ -106,3 +106,47 @@
     A: docker top
 28: A cluster may want to have a dedicated manager node that does NOT serve as a worker node,
     A: docker swarm join --availability=drain
+
+------ TEST 2 ----------
+1.
+three a  = new one()
+Two b = new One()
+Five f = new Three()
+
+2. implements Movement
+    Walking
+    this.movement.goTo
+
+3. interface list
+   sortedset
+4. list.stream().sorted((a,b)->b.compareTo(a)).collect(Collectors.toList())
+5. code 1 returns first entry
+    code 2 and 3 return last entry
+
+6. CrudRepository
+   StudentRepositoyr studentRepositoyr
+   this.studentrrepostyr = studentRepsotyr;
+
+7. @RestController
+   @GetMapping
+   findAll
+8. HttpSecuirity
+   authrozieRequests
+   hasRole
+
+1. C
+2. ENTITY
+@ID
+@TRANSIENT
+
+3. ArithmeticException
+   NullPointerException
+   FileNotFoundException
+4. A: abc (E)
+    B: default
+     C: D
+5.  impleents
+    Walking
+  this.;
+6. B+c+e
+

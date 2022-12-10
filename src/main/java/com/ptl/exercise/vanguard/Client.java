@@ -13,5 +13,4 @@ public class Client {
      * 2. Follow up - Euclieen Distance Math.sqart(deltaX2 - deltaY2) -- and write unit test to it
      */
 
-
 }

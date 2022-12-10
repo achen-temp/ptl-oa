@@ -1,8 +1,6 @@
 package com.ptl.exercise.Altimetrik;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 //print 1 to n in two thread, even and odd
 class MyRunnable implements Runnable {
@@ -191,13 +189,100 @@ class Kaleb_11212022 {
 
         System.out.println("----output2---------");
 
-        int[] nums2 = {10,2,70,57,4,7, 15};
-        int[] result2 = order2(nums2);
+        int[] nums2 = {10,2,70,57,4,7,15};
+        int[] result2 = order(nums2);
         System.out.println(Arrays.toString(result2));
     }
 
 }
 
+class AndySong_11232022{
+    //    //given input array, {10,2,70,57,4,7}
+    //    //cannot use sort or queue
+    public static int[] reorder(int[] nums){
+        if(nums == null || nums.length == 0){
+            return nums;
+        }
+        int k = 0;
+        Set<Integer> visited = new HashSet<>();
+        int[] result = new int[nums.length];
+        while(k < nums.length){
+            int min = find(nums, true, visited);
+            result[k++] = min;
+            int max = find(nums, false, visited);
+            if(k < nums.length){
+                result[k++] = max;
+            }
+        }
+        return result; //我的main在最底下
+    }
+
+    public static int find(int[] nums, boolean findMin, Set<Integer> visited){
+        if(findMin){
+            int min = Integer.MAX_VALUE;
+            int minIndex = -1;
+            for(int i = 0; i < nums.length; i++){
+                int num = nums[i];
+                if(visited.contains(i)){
+                    continue;
+                }else{
+                    if(num < min){
+                        min = num;
+                        minIndex = i;
+                    }
+                }
+            }
+            visited.add(minIndex);
+            return min;
+        }else{ //把if部分的copy到else然后修改红色部分
+            int max = Integer.MIN_VALUE;
+            int maxIndex = -1;
+            for(int i = 0; i < nums.length; i++){
+                int num = nums[i];
+                if(visited.contains(i)){
+                    continue;
+                }else{
+                    if(num > max){
+                        max = num;
+                        maxIndex = i;
+                    }
+                }
+            }
+            visited.add(maxIndex);
+            return max; //回到上面那个method
+        }
+    }
+
+    //same: consecutive sum equal to N
+    public static List<List<Integer>> getSum(int n){
+        List<List<Integer>> result = new ArrayList<>();
+        for(int i = 1; i <= n; i++){
+            int sum = 0;
+            for(int j = i; j <= n; j++){
+                sum += j;
+                if(sum < n){
+                    continue;
+                }else if(sum > n){
+                    break;
+                }else{ // =
+                    List<Integer> list = new ArrayList<>();
+                    for(int k = i; k <= j; k++){
+                        list.add(k);
+                    }
+                    result.add(list);
+                    break;
+                }
+            }
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(getSum(9));
+    }
+
+
+}
 public class Coding {
 
     //convert string number to integer "123" -> 123

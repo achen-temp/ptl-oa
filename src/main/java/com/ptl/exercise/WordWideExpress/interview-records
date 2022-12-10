@@ -1,32 +1,90 @@
 Round 1:
 Q. Java 8 features
-Q. completable future
-Q:  SOLID
+   -- stream api, functional interface, default method, lambda expression, optional class
+Q. completable future vs future
+   -- 1) and extension of API, it let you run tasks in a then,  a.thenapply(b)
+   -- 2) provide runAsync() method to run some task in background in separate thread
+   -- 3) Error handling with some methods, like handle(), whenComplete(callback)
+Q:  what is SOLID
+    --- Single responsbility, Open close, liskov substition, Interface segragation, Dependency inversion
 Q: cached thread pool vs fixed thread pool
+    --- cached can reuse idle thread and only create new thread when needed. initially it is 0 thread
 Q:  functional interface, can it have default and static method, can you override default method
+    --- yes, yes,
 Q:  java 8  map vs flatmap
+    --- flat map reduce dimension
 Q:  java memory structure (heap structure)
-Q:  types of garage collection
+    --- stack (store thread, counter, values, references)
+    --- heap(young (eden, s0,s1),  old(Tenured))
+    --- non heap (permenant generation -> metaspace in java 8,  store constant pool, constructor etc)
+                 (code cache - compiled code)
+Q: set java memeory, heap size
+    -XmsSetting — initial Heap size
+    -XmxSetting — maximum Heap size
+    -XX:NewSizeSetting — young generation heap size
+    -XX:MaxNewSizeSetting — maximum young generation heap size
+    -XX:MaxPermGenSetting — maximum size of Permanent generation
+    -XX:SurvivorRatioSetting — new heap size ratios (e.g. if Young Gen size is 10m and memory switch is –XX:SurvivorRatio=2, then 5m will be reserved for Eden space and 2.5m each for both Survivor spaces, default value = 8)
+    -XX:NewRatio — providing ratio of Old/New Gen sizes (default value = 2)
+
+Q:  types of garage collectors
+    --- Serial Garbage collector,  Parallel, Concurrent Mark Sweep - CMS, Garbage First - G1
 Q:  ForkJoinPool - how it works
+    --- based on divide and conquer (like map and reduce)
+    -- FORK: divide tasks to many small tasks to run asyn, JOIN: combine results recurisively to get final result
+    -- use the work-steal algorithm
 Q:  What is Work stealing algorithm in java
+    --- In Fork/Multi thread step, if a thread finishes its own queued tasks, it will work on other threads tasks
+    --- improve system perofrmance
 Q:  Advantage and drawback of microservices
+    --- PRO: 1) easy scaling, like add more services or make copies
+             2) handle large reqeust, load balancing, replication, kafka etc
+             3) developers only work on several services, easy to understand.
+             4) when maintaince of one service, no downtime for other services or whole applications
+             5) fault tolerance, you can back up each services in differnt locations,
+             6) each service can use differnt tech stacks
+    --- CON: 1) potential delay when communicating between services because more network traffic
+             2) more services, more services, more cost
+             3) potential data inconsistence, and hard transaction management and too many logs
+             4) hard to do global testing and debugging
 Q:  What is try-with-resources?
+   --- just put the resources in a bracket after try keyword so it will be auto closed, you dont need finally block to close it
+   --- example: FileReader, BufferReader,  jdbc connection create statement
 Q:  What is Saga pattern in microservices.
-1. what is java8 metaspace and how is it increased.
-2.  how to find the size of young generation in java (--XX:newRatio)
+   --- a pattern to manage data consistency and transactions, two types, Choreography and Orchestration
+   --- Choreography -- services in a chain, transaction proceed, rollabck in reverse order
+   --- orchstration -- a central service to manage transaction, every services communicate with central only - better
+Q. what is java8 metaspace and how is it increased.
+   --- new memeory to repace permanent generation, it is size flexible based on operating system memory -- auto increase
+
 3. what is blocking queue
-4. what is try-with-resources
-5. what is work-steal algorithms
-6. what is saga pattern
+   --- when add element, but queue is full, it will wait until there is space available
+   --- when read/delete element, but queue is empty, it will wait until queue has element
+
 7. difference between exception handler and global advice
-seralization vs externalization
-kafka seciryt
-parllel stream vs stream
-how dispatch servlet works
-how to create a custom annoation in spring
-how to configure multiple datasource in spring
-web server vs applcation server
-how to do ranking with java 8 stream api
+   --- @exceptionhandler handles exception in one controller
+   --- @controllerAdvice together to handle excpetion for all controllers
+
+8. difference seralization vs externalization
+   --- serialization is to seralize the whole object, when object is big, performance issue comes
+   --- externalization, you can control what to searalize, whole or partial object, you can override readExternal, writeExternal method
+       so you can resolve performance issue
+9. Kafka security - SASL
+   -- use SASL for authentication
+10. parllel stream vs stream
+   -- stream is sequential, parallel stream is to parallel indepdent tasks together concurrent process
+11. how to create a custom annoation in spring
+   --- @Retention(RetentionPolicy.RUNTIME)
+       @Target(ElementType.Type)
+       public @interface myOwnAnnotation { ... }
+12. how to configure multiple datasource in spring
+   --- in application.properties add different datasource entries with different keys
+   --- define two methods to return datasources, but they inject use values from different entries in application.properties
+   --- use @qualifer to inject them separately into DAO layer
+13. web server vs applcation server
+   --- application server > web server
+14. how to do ranking with java 8 stream api
+   --- ???
 
 
 Round 2:

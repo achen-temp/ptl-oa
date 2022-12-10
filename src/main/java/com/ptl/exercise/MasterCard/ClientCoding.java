@@ -1,6 +1,31 @@
 package com.ptl.exercise.MasterCard;
 
-import java.util.Stack;
+import java.util.*;
+
+class AndySong_TechClub{
+
+    //print foo is divisible by 2, print bar if divisible by 3,
+    //print foo bar if divisible by both 2 and 3.
+    public static void printNumber(int num){
+        if(num % 2 == 0 && num%3 == 0){
+            System.out.println( num + " --- foo bar");
+        }else if(num % 2 == 0){
+            System.out.println(num + " --- foo");
+        }else if(num % 3 == 0){
+            System.out.println(num + " --- bar");
+        }else{
+            System.out.println(num);
+        }
+    }
+
+    public static void main(String[] args){
+        for(int i =0; i < 100; i++){
+            printNumber(i);
+        }
+    }
+
+
+}
 
 public class ClientCoding {
 
