@@ -61,8 +61,8 @@ SET2::::
         }
 7.  java: cleanTxtFiles() remove all non alphabet characters from .txt file
     A:  Files.walkFileTree(path, new SimpleFileVisitor(startPath)
-        BufferedWriter bufferedWriter = new BufferredWriter(file.toAbsolutePath()..) ??
-        lines.map(s -> s.replaceAll(regex, "").forEachOrdered(output::append); ??
+        FileWriter
+        the one contains "flush" in the end
 8.  MongoDB
     A:  mapReduce
         map
@@ -71,3 +71,6 @@ SET2::::
     A:  ConnectionFactory = new ActiveMQConnectionFactory(...)
         Connection connection = connectionFactory.createConnection();
         TextMessage message = session.createTextMessage(text);
+10. Spring Boot Log4J levels
+    A: FATAL,  ERROR, WARN, INFO, DEBUG, TRACE
+11.
