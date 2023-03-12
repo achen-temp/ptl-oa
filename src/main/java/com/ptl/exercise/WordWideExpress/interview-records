@@ -6,7 +6,11 @@ Q. completable future vs future
    -- 2) provide runAsync() method to run some task in background in separate thread
    -- 3) Error handling with some methods, like handle(), whenComplete(callback)
 Q:  what is SOLID
-    --- Single responsbility, Open close, liskov substition, Interface segragation, Dependency inversion
+    --- Single responsbility: one object own handle its own business
+    --- Open close: open for inehritance and close for modification
+    --- liskov substition: parent should be replacable by child
+    --- Interface segragation: each interface should be independent, split large interface to many small
+    --- Dependency inversion: decouple code to reduce dependency
 Q: cached thread pool vs fixed thread pool
     --- cached can reuse idle thread and only create new thread when needed. initially it is 0 thread
 Q:  functional interface, can it have default and static method, can you override default method
@@ -111,8 +115,7 @@ Round 2:
    2) To prevent deadlock, first we can define atomic level resources, like we make the account atomicReference variable,
    to make sure the operation is atmoic level so it will be threadSafe. Another way is we need to first check all the resources
    that are needed to finish the transaction, we can either remove dependencies on each other, or we can lock them all.
-4. Java Memeory structure,
-    how to find heap size (young, old, permanent)
+
 5. Garbege collection, how it works in java 8
 6. What do you look for in the new project
 7. linear and non-linera java collections
@@ -120,3 +123,11 @@ Round 2:
 Round 3:
 1. Advantage and disadvantage of microservices
 2. ...
+
+
+
+1. mongodb how to get count group by department
+2. mongodb template how to use it
+3. mongodb pipeline stages
+4. can mongodb have stored procedures
+5.

@@ -308,3 +308,41 @@ public class Coding {
         System.out.println(result);
     }
 }
+
+class FredDu{
+    public static void consecutiveChar(String s){
+        //s = "aabbbcccdddddddxxx"
+        if(s == null || s.length() == 0){
+            return;
+        }
+        int resultCount = Integer.MIN_VALUE;
+        int resultStart = -1;
+        char resultChar = '#';
+
+        int prevCount = 1;
+        int prevStart = 0;
+        char prevChar = s.charAt(0);
+        for(int i = 1; i < s.length(); i++){
+            if(s.charAt(i) == s.charAt(i - 1)){
+                prevCount++;
+            }else{
+                //update result
+                if(prevCount > resultCount){
+                    resultChar = prevChar;
+                    resultCount = prevCount;
+                    resultStart = prevStart;
+                }
+                //reset prev
+                prevCount = 1;
+                prevStart = i;
+                prevChar = s.charAt(i);
+            }
+        }
+
+        System.out.println("char: " + resultChar + ", start at: " + resultStart + ", count: " + resultCount);
+    }
+
+    public static void main(String[] args) {
+        consecutiveChar("aabbbcccdddddddxxx");
+    }
+}

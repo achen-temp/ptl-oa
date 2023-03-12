@@ -43,3 +43,16 @@ Q: What are the AWS features you have used.
 Q: How do you cache in microservice
 Q: What is difference between HashMap and TreeMap, advantage of TreeMap
 Q: What is cross join. How to make cross join same result as inner join? (use where on cross join)
+
+REDIS:
+Q: what is redis operation key types
+Q: what is redis eviction policy
+Q: How is redis different from local cache
+Q: Data structure supported by redis
+
+
+What is kafka ISR
+What are different type of kakfa APIs.
+what is kafka server maximum message size
+What is kafka rebalancing.
+What is kafka message transfer protocol.

@@ -77,8 +77,8 @@ Q:  types of garage collection
        Concurrent Mark Sweep CMS GC: Does not pause main thread,
        Garbage First G1 GC: For very large memory. It will divide heap into blocks and process them separately
 Q:  ForkJoinPool
-    It is a pool that uses fork and join. the Fork is to split the task into multiple subtasks, the join is to combine the completed subtasks back. It is like divide and conquer to
-    improve the performance.
+    It is a pool that uses fork and join. the Fork is to split the task into multiple subtasks, the join is to combine the completed subtasks back.
+    It is like divide and conquer to improve the performance.
 Q:  What is Work stealing algorithm in java
     A: it is in the fork join pool. the Fork join pool uses work stealing algorithm. So if you have some threads already finished their work, they can
     steal pending tasks from other threads work on them. This can help improve system performance.
@@ -129,12 +129,68 @@ Q:  Spring boot how to change to another server instead of tomcat?
 
 Q:  Difference between Unit test, Integration Test, E2E test and the tools used for them.
 
-
-
-1. what is java8 metaspace and how is it increased.
-2.  how to find the size of young generation in java (--XX:newRatio)
-3. what is blocking queue
+Q: What is deadlock?
+    A: deadlock is when 2 or more threads wait for each other to release the lock. Example: you have two files A and B. Thread 1
+    needs to modify file A (lock it) and then modify file B. Thread 2 needs to modify file B (lock it) and then A. Since a file cannot
+    be modified by 2 threads at the same time. So thread 1 is waiting for thread 2 to release file B and thread 2 is waiting for thread 1 to release file A.
+    they are waiting for each other. No one will give up.
+Q:  How to find deadlock threads
+    A: we can use tools, like a tool called fastThread. It can take thread dump (like take a snapshot of all threads current states)
+    and use a dashboard to display all threads status. Like if the threads is running, waiting, sleeping or blocking..
+Q:  How to prevent deadlock
+    A: There are many ways to prevent deadlocks
+       1) Since deadlock happens when resource cannot be shared (Mutul Exclusion). We can use add threads into queue. For example, a file cannot be written by
+          2 threads at same time. But we can add 2 threads into a queue, so they will write to the file one by one.
+       2) Prevent (Hold and Wait). We can precheck if thread is needing multiple resources. Like if thread 1 will access file A and wait file B. We can simply
+          allocate file A and B both to thread 1 so that no other threads will block them. This is what Bank usually does.
+       3) 'No preemption': if there are 2 threads in deadlock, we can temporarily stop thread 2 to let thread 1 finish first and then we restart thread 2.
+       4) 'Circular Wait': if multiple threads deadlocking on multiple resources which forming a circular wait. We can assign priorities to resources. So a
+          thread can only access resources with priority higher than it self.
+Q:  What is OOP concepts
+    A: Polymorphism: dynamic polymorphism = override. Parent and Child have exact same method definition but with different logic. Child cannot have broader access modifier.
+                     static polymorphism = overload. In One class, 2 methods have same method name, but different parameters.
+       Inheritance: Class and Interface inheritance. A class can only inheirt one parent class. A class can implement many interfaces.
+       Encapsulation: Access modifier. Public: accessible anywhere. Protected: Can be accessed by same package or children.
+                      Default: Can be accessed by same package only. Private: only accessible inside the object.
+       Abstraction: abstract class and abstract methods and interfaces.
+Q:  Difference between hashMap and concurrentHashMap
+    A: 1) hashmap is not thread safe. Fail fast and will throw ConcurrentModificationException.
+       2) hashmap allows one null key.. ConcurrentHashMap does not allow null keys.
+Q:  Java 8 hashmap new feature:
+    A: in java 8 hashmap buckets, the entries are stored as binary tree instead of linkedlist.
+Q:  What is Exception and its type
+    A: top is 'throwable' with two children 'error' and 'exception'. 'Error' is like jvm system error, it is not recoverable, like 'out of memory error'
+        'exception' is recoverable and caused by code. 2 types: checked exception = compile exception: use try catch to handle, like 'ThreadInterruptedException'
+        or 'FileNotFoundException'. uncheckedException = runTime exception: can be caught by 'throws' keyword, like 'null pointer exception NPE'
+Q:  What is ACID properties
+    A: It is design principles for traditional sql database
+       A: Atomicity: Like if a transaction needs to update 2 database tables. This transaction should be committed only when 2 updates all finished successfully.
+          Consistent: Multiple reads should return same dataset. It should not have phantom or inconsistent read.
+          Isolation: if there are 2 transactions. t1 read data and update it. t2 read after t1 reads but update before t1 updates. So when t1 updates, the data
+                      is already changed by t2. so t1 data is outdated, it should not update unless it fetch latest data.
+          Durability: if the database is down, the data should not be lost.
+Q:  what is java8 metaspace and how is it increased?
+    A: metaspace is introduced in java 8 to replace the old heap permanent generation. It's memeory size is flexible and increses
+    when needed. It has max memory up to the system memeory.
+Q:  how to find the size of young generation in java (--XX:newRatio)
+    A: --Xms: minimum heap size
+       --Xmx: maximum heap size
+       --Xmn: set size for young generation
+       --XX:PermGen: set the size for permanent generation
+       --XX:MaxPermGen: set the max size of permanent generation
+       --XX:SurvivorRatio: Young generation includes Eden space and Survivor space. This is to set ratio eden/survivor
+       --XX:NewRatio: set ratio old/new generation
+Q:  what is blocking queue
+    A: When queue is full, the operations will need to wait until there is space in queue.
+Q:  What is java 8 built in functional interface?
+    A:  function: like stream.map. It takes an single input and return single out, like it takes list of employess and return their names
+        predicate: like stream.filter - It only return true of false, like in stream.filter, only true results will be kept
+        consumer: only input, no return. Like it reads data and write to database and does not return anything.
+        producer: no input, only output. Like a random value generator.
+        BinaryOperator: 2 input and 1 output. Like count() function
+        UnaryOperator: 1 input and return same type output, like a function to count each number by 2.
 4. what is try-with-resources
+    A: try(Scanner or iterator), put resources in the brackets with try keyword. Purpose is you dont need to always close the resources.
 5. what is work-steal algorithms
 6. what is saga pattern
 7. difference between exception handler and global advice

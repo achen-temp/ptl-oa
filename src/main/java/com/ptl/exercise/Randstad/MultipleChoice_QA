@@ -1,3 +1,4 @@
+SET1::::
 1.  choose correct statement (CanFly, HasWings, Falcon)
     A: The code compiles without any issues
 2.  what behavior (CanClimb, CanClimbTrees, EasterChipmunk)
@@ -27,3 +28,46 @@
 10. REST API /user
     A:  POST /user
         name = John & age = 25
+
+SET2::::
+1.  create a password (A-O and p-z) randomly for a user
+    A:  Integer characterLength = characters.length();
+        password += characters.charAt(random.nextInt(characterLength)); //nextInt(k) does not include k
+2.  apache kafka consumer example
+    A:  kafkaConsumer.subscribe(topics)
+        ConsumerRecords<..> records = kafkaConsumer.poll(10);
+        ConsumerRecord b = (ConsumerRecord) a.next()
+3.  Spring boot - student management system
+    A:  @EnableWebSecurity
+        extends WebSecurityConfigurerAdapter
+        auth.authenticationProvider ??
+4.  NoSQL - update marks in the subject "English" roo = 5
+    A:  Cluster.builder().addContactPoint("127....")
+        Session session = cluster.connect(dbName/keyspace) or newSession()
+        session.execute(query)
+5.  include the configurations of CarService bean only if it is not present in the application context
+    A:  @Configuration
+        public class CarAutoConfiguration{
+            @Bean
+            @ConditionalOnMissingBean
+            public CarService carService(){...}
+        }
+6.  java: Basic String Manipulation -- 必要快速写
+    A:  if(Character.isLowerCase(s.charAt(i))){
+           newStr.set(i, Character.toUpperCase(s.charAt(i)));
+        }
+        else if(Character.isUpperCase(s.charAt(i))){
+            newStr.setCharAt(i, Character.toLowerCase(s.charAt(i)));
+        }
+7.  java: cleanTxtFiles() remove all non alphabet characters from .txt file
+    A:  Files.walkFileTree(path, new SimpleFileVisitor(startPath)
+        BufferedWriter bufferedWriter = new BufferredWriter(file.toAbsolutePath()..) ??
+        lines.map(s -> s.replaceAll(regex, "").forEachOrdered(output::append); ??
+8.  MongoDB
+    A:  mapReduce
+        map
+        reduce
+9.  ActiveMQ with JMS (https://activemq.apache.org/version-5-hello-world)
+    A:  ConnectionFactory = new ActiveMQConnectionFactory(...)
+        Connection connection = connectionFactory.createConnection();
+        TextMessage message = session.createTextMessage(text);
