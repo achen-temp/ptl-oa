@@ -388,9 +388,7 @@ class IgWalmart{
             }else if(curr.sum < amount){
                 for(int i = 0; i < coins.length; i++) {
                     int coin = coins[i];
-                    if (curr.map.getOrDefault(coin, 0) < counts[i]){
-                         queue.add(new Node(coin, curr));
-                    }
+                    queue.add(new Node(coin, curr));
                 }
             }
         }
@@ -399,9 +397,8 @@ class IgWalmart{
 
     static class Node{
         int val;
-        List<Integer> list;
+        List<Integer> list; //1,2,2,5 -- COUNT=[1,1,5]
         int sum;
-        Map<Integer, Integer> map = new HashMap<>();
         public Node(int val, Node parent){
             this.val = val;
             if(parent == null){ //top nodes
@@ -413,10 +410,8 @@ class IgWalmart{
                 this.list.add(val);
                 this.sum = parent.sum + val;
             }
-            for(int n : list) {
-                map.put(n, map.getOrDefault(n, 0) + 1);
-            }
         }
+
     }
 
     public static void main(String[] args) {
@@ -508,12 +503,79 @@ class Airbnb{
     //let me write test case in the main method use your example
     public static void main(String[] args) {
 
-        int[][] matrix = {{3,3,1,1}, {2,2,1,2}, {1,1,1,2}};
-        int[][] result = sort(matrix);
-        for(int i = 0; i < result.length; i++){
-            System.out.println(Arrays.toString(result[i]));
-        }
-
+        String s = "ADOBECODEBANC";
+        String t = "ABC";
+        System.out.println(minWindowSubstring(s, t));
     }
 
+
+
+    public static String minWindowSubstring(String s, String t){
+
+        Map<Character, Integer> map = new HashMap<>();
+        for(int i = 0; i < t.length(); i++){
+            char c = t.charAt(i);
+            if( ! map.containsKey(c) ){
+                map.put(c, 1);
+            }else{
+                map.put(c, map.get(c) + 1);
+            }
+        } //say: here map key is characters in t, and value is count of each character
+
+        int p1 = 0, p2 = 0;
+        int count = map.size();
+        int result = Integer.MAX_VALUE;
+        boolean notFound = true;
+        int preP1 = 0;
+        while(p2 < s.length()){
+            char c2 = s.charAt(p2);
+            if(map.containsKey(c2)){
+                map.put(c2, map.get(c2) - 1);
+                if(map.get(c2) == 0){
+                    count--;
+                }
+            }
+            while(count == 0){
+                if(p2 - p1 + 1 < result){
+                    notFound = false;
+                    result = p2 - p1 + 1;
+                    preP1 = p1;
+                }
+                char c3 = s.charAt(p1);
+                if(map.containsKey(c3)){
+                    map.put(c3, map.get(c3) + 1);
+                    if(map.get(c3) > 0){
+                        count++;
+                    }
+                }
+                p1++;
+            }
+            p2++;
+        }
+        return notFound ? "" : s.substring(preP1, preP1 + result);
+    }
+
+}
+
+class StringTest{
+    public static void main(String[] args) {
+    }
+
+    public static boolean wordBreak(String s, List<String> wordDict) {
+        Set<String> wordDictSet = new HashSet<>(wordDict);
+        boolean[] dp = new boolean[s.length() + 1];
+        dp[0] = true;
+        for (int i = 1; i <= s.length(); i++) {
+            for (int j = 0; j < i; j++) {
+                String sub = s.substring(j, i);
+                System.out.println("i:" + i + ", j: " + j + ", sub: " + sub);
+                if (dp[j] && wordDictSet.contains(s.substring(j, i))) {
+                    dp[i] = true;
+                    break;
+                }
+                System.out.println("dp: " + Arrays.toString(dp));
+            }
+        }
+        return dp[s.length()];
+    }
 }

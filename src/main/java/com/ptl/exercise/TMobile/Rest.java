@@ -135,3 +135,16 @@ class CodeTestRequest {
  */
 public class Rest {
 }
+
+class AliceMiao{
+    /**
+     * Name Details: { name: "jack",  phone: "12334534546"}
+     *
+     * Given this example customer name details, write rest api to add a new customer
+     * 1. if success, return 200
+     * 2. Request HEADER should contain none empty "trackingId", otherwise return 400 BAD REQUEST
+     * 3. phone number should be 10 digits, otherwise return 400 BAD REQUEST
+     * 4. if there is error creating the new customer, return 500 INTERNAL SERVER ERROR
+     */
+
+}

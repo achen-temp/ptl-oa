@@ -342,7 +342,41 @@ class FredDu{
         System.out.println("char: " + resultChar + ", start at: " + resultStart + ", count: " + resultCount);
     }
 
-    public static void main(String[] args) {
-        consecutiveChar("aabbbcccdddddddxxx");
+    public static void consecutiveChar3(String input){
+        //s = "aabbbcccdddddddxxx"
+        int resultCount = Integer.MIN_VALUE;
+        int resultStartIndex = -1;
+        int resultEndIndex = -1;
+
+        int startIndex = 0; //record pervious consecuritve start index --你不需要写comment
+        int endIndex = 0;
+        int count = 1; //record pevious consecuritve count
+        for(int i = 1; i < input.length(); i++){
+            if(input.charAt(i) == input.charAt(i - 1)){
+                count++;
+            }else{
+                endIndex = i - 1;
+                if(count > resultCount){ //result count add on line 17
+                    resultCount = count;
+                    resultStartIndex = startIndex;
+                    resultEndIndex = endIndex;
+                }
+                count = 1;
+                startIndex = i;
+                endIndex = i;
+            }
+        }
+        //return input.substring(resultStartIndex, resultEndIndex+1);
+
+
+        System.out.println(input.substring(resultStartIndex, resultEndIndex+1));
     }
+
+    public static void main(String[] args) {
+        consecutiveChar3("aabbbcccdddddddxxx");
+    }
+
+    //Frances - 03/15/2023 - Fred Du
+
+
 }
