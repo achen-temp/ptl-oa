@@ -40,7 +40,7 @@ SET2::::
 3.  Spring boot - student management system
     A:  @EnableWebSecurity
         extends WebSecurityConfigurerAdapter
-        auth.authenticationProvider ??
+        auth.authenticationBuilder
 4.  NoSQL - update marks in the subject "English" roo = 5
     A:  Cluster.builder().addContactPoint("127....")
         Session session = cluster.connect(dbName/keyspace) or newSession()
