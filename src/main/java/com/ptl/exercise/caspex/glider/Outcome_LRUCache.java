@@ -4,6 +4,8 @@ import java.util.*;
 
 public class Outcome_LRUCache {
 
+    //define node for LRU cache to use.
+    //LRU Cache is implemented by doubly linked list
     static class Node{
         int key;
         int value;
@@ -15,6 +17,7 @@ public class Outcome_LRUCache {
             this.value = value;
         }
     }
+
 
     static class LRUCache{
         int capacity;
@@ -72,7 +75,7 @@ public class Outcome_LRUCache {
     }
 
 
-
+    //method definition given, but logic you need to implement
     public static List<Integer> solve(int capacity, List<String> ar){
         //write your implementation here
         List<Integer> result = new ArrayList<>();
@@ -99,6 +102,7 @@ public class Outcome_LRUCache {
     }
 
 
+    //no need to do this, just my test code
     public static void main(String[] args) {
         Outcome_LRUCache outcome = new Outcome_LRUCache();
         List<String> ar1 = Arrays.asList("GET,2", "PUT,1,100", "PUT,2,125","PUT,3,150","GET,1","GET,3");
