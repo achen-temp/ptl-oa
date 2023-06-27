@@ -1,4 +1,4 @@
-package com.ptl.exercise.Altimetrik;
+package com.ptl.exercise.altimetrik;
 
 class LativiaZhao_12092022{
     //coding Euler way to calculate PI

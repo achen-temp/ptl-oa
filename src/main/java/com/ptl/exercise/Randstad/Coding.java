@@ -1,17 +1,17 @@
 package com.ptl.exercise.Randstad;
 
+import org.springframework.web.bind.annotation.PathVariable;
+
 import javax.cache.configuration.MutableConfiguration;
 import javax.cache.spi.CachingProvider;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.client.Invocation;
-import javax.ws.rs.client.WebTarget;
+import javax.print.attribute.standard.Media;
+import javax.ws.rs.*;
+import javax.ws.rs.client.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import javax.cache.*;
 
@@ -22,6 +22,10 @@ class SongClient {
         Invocation.Builder invocationBuilder = webTarget.request(MediaType.APPLICATION_JSON);
         Response response = invocationBuilder.get();
         Song song = response.readEntity(Song.class);
+
+        //problem2
+        Response response2 = invocationBuilder.put(Entity.entity(SongService.class, MediaType.APPLICATION_JSON));
+        //
         System.out.println(response.getStatus());
         System.out.println(song.getSinger());
     }
@@ -51,6 +55,13 @@ class SongService {
         return songs;
     }
 
+    @PUT
+    @Path(("/update/{id}"))
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void updateSongById(@PathVariable("id") int id, Song song){
+        //detailed code ignored.
+    }
 }
 
 class Song {
@@ -87,6 +98,7 @@ class CachingQuestion {
 
 public class Coding {
     public static void main(String[] args) {
-        System.out.println(10);
+
     }
+
 }

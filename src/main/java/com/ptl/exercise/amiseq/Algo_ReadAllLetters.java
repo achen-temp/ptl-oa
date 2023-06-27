@@ -1,4 +1,4 @@
-package com.ptl.exercise.Amiseq;
+package com.ptl.exercise.amiseq;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package com.ptl.exercise.Altimetrik;
+package com.ptl.exercise.altimetrik;
 
 import java.util.*;
 
