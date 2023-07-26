@@ -1,0 +1,31 @@
+Q: Reliability - which followings are correct?
+A: Some companies disable parts of their system on purpose even on production....
+A: Redundancy can help mitigate node failures in the system.
+A: Some of the failures can be classified as either network failures, crash failures, or Byzantine failures, most difficult is Byzantine failures
+
+Q: Replication and Partitioning
+A: Both replication and paritioning can be crucial in improving the perforamnc eof delivering data on request.
+A: Using hash-based partitioning usually has a disadvantage in the performance of range-based queries
+
+Q: REST Server Response
+A: XML
+A: JSON
+A: CSV
+
+Q: Good URI design
+A: URIs should be short in length.
+A: URIs should be case-sensitive
+A: URIs should never be changed.
+
+Q: Architecture constraints of REST
+A: Uniform interface
+A: Stateless
+A: Cacheable
+A: Layered system
+
+Q: Restrictions of RESTful Web Services
+A: There should be separate concerns for each server and client which help to maintain the application's modularitey....
+A: The client-server communication should be stateless....
+A: In client-server communication, the HTTP response should be cacheable so that, when required, a cached copy can be used...
+A: Client-server communication should be done on a layered system. ...
+
