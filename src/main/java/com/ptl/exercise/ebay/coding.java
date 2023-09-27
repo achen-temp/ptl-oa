@@ -1,6 +1,8 @@
 package com.ptl.exercise.ebay;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Stack;
 
 public class coding {
@@ -41,6 +43,7 @@ class CharlieLi052023{
      * 5,        5,8,10
      *
      */
+    //find the distance to next greater element
     public static int[] nextGreater(int[] nums){
         Stack<Integer> stack = new Stack<>();
         int[] result = new int[nums.length];
@@ -58,37 +61,103 @@ class CharlieLi052023{
         return result;
     }
 
-    public static void printDistances(int[] arr) {
-        int n = arr.length;
-        int[] dist = new int[n]; // array to store distances
-        Arrays.fill(dist, 0); // initialize all distances to 0
-        Stack<Integer> stack = new Stack<Integer>(); // stack to store indices
-
-        // loop through the array from left to right
-        for (int i = 0; i < n; i++) {
-            // if the current element is greater than the element at the top of the stack,
-            // then pop elements from the stack and calculate the distance
-            while (!stack.isEmpty() && arr[i] > arr[stack.peek()]) {
-                int index = stack.pop();
-                dist[index] = i - index;
+    //find next greater element
+    public static int[] findNextGreaterElement(int[] nums){
+        Stack<Integer> stack = new Stack<>();
+        int[] result = new int[nums.length];
+        for(int i = 0; i < nums.length; i++){
+            if(stack.isEmpty() || nums[i] <= nums[stack.peek()]){
+                stack.push(i);
+            }else{
+                while(!stack.isEmpty() && nums[stack.peek()] < nums[i]){
+                    int index = stack.pop();
+                    result[index] = nums[i]; //this is the only difference
+                }
+                stack.push(i);
             }
-            stack.push(i); // push current index to the stack
         }
+        return result;
+    }
 
-        // remaining elements in the stack have no next greater element
-        while (!stack.isEmpty()) {
-            int index = stack.pop();
-            dist[index] = 0;
+    //LC240
+    public static boolean findTarget(int[][] matrix, int target){
+        int row=matrix.length-1;
+        int col=0;
+        // 当坐标在矩阵范围内时，查找target
+        while(row>=0&&col<matrix[0].length){
+            // 如果当前数字等于target，返回true
+            if(matrix[row][col]==target) {
+                return true;
+            }
+            // 如果当前数字大于target，行减一
+            if(matrix[row][col]>target) {
+                row--;
+            } else{
+                col++; // 如果当前数字小于target，列加一
+            }
         }
+        return false;
+    }
 
-        // print the distances for each element
-        for (int i = 0; i < n; i++) {
-            System.out.print(dist[i] + " ");
+    public static List<Integer> findRepeatingZeros(){
+        int[] nums = {0,0,1,2,3,5,6,0,0,8,0,0};
+        List<Integer> result = new ArrayList<>();
+        for(int i = 0; i < nums.length - 1; i++) {
+
+            if (nums[i] == 0 && nums[i + 1] == 0) {
+                result.add(i);
+            }
+            if (i != 0 && nums[i - 1] == 0 && nums[i] == 0 && nums[i + 1] != 0) {
+                result.add(i);
+            }
         }
+        if(nums[nums.length - 1] == 0 && nums[nums.length - 2] == 0){
+            result.add(nums.length - 1);
+        }
+        System.out.println(result);
+        return null;
     }
 
     public static void main(String[] args) {
         int[] arr = {73, 74, 75, 71, 69, 72, 76, 73};
-        printDistances(arr);
+        int[] result = findNextGreaterElement(arr);
+       // System.out.println(Arrays.toString(result));
+        System.out.println(findRepeatingZeros());
     }
+}
+
+class HarveyLin052023{
+    /*
+    HARVEY-LIN-EBAY-CLIENT-R1-05/18/2023
+1. tell me your biggest project and WHY do you like it
+2. coding: findNextGreaterElementDistance (
+   1.Given example and walk through the example with your logic
+   2.time and space complexity
+3. given matrix, each row is increasing from left to right.
+   next row beginning is larger than previous row end
+   Find if a target exists in the matrix --- binary search
+4. have you used microservices
+5. you ask interviewer a question
+HARVEY-LIN-EBAY-CLINET-R2--05/22/2023
+1. Have you used java OOP concepts and design patterns
+2. how do you increase performance in database side?
+3. coding: given array in ascending order, find their squares in ascending order (-4,-3,1,2) --> {1,4,9,16}
+   1. corner case: -4 and 4 have same squares, how do you handle
+   2. add exception if the input array is null or empty, throw the exception
+   3. time and space complexity
+   4. If we just square all elements and then sort them.. Is this solution better than your two pointers solution? -- my solution 2 pointers is bettter bexcause it is O(n), your sorting is O(nlogn)
+     */
+}
+
+class AlfieLi082023{
+    /**
+     * 1. how kafka keep message in order
+     * 2. how producer send message in order
+     * 3. how to find a deadlock
+     * 4. Coding1:  find Repeating Zeros indexes,  O(n), only 1 collection allowed
+     * {0,0,2,3,4,5,0,0,8,9,0,0,0} -- return {0,1,6,7,10,11,12}
+     * 5. Coding2: write a deadlock
+     * 6. How do you debug a code if log has no error
+     * 7. how do you quickly adapt to large Legacy code system
+     */
 }

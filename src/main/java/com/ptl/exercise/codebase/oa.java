@@ -57,6 +57,8 @@ public class oa {
      * input3 = 6 ------> [2,5]
      * input3 = 5 ------> [2,6]
      * input3 = 7 ------> [-1] because 7 not in input2
+     *
+     * DO NOT SORT THE RESULT!!! [6,5] DONT SORT TO [5,6], keep given order, not ascending order
      */
     public static int[] siblingSearch(int input1, int[] input2, int input3) {
         for(int gen = 0; gen < input1; gen++){

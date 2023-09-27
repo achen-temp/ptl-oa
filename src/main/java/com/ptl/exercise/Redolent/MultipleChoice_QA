@@ -64,3 +64,5 @@
     A: both as a queue and as a stack
 26: How many comparison in a merge sort, (to merge two sorted arrays with size m and n)
     A: O(m + n)
+27: What is big(O) annotation?
+    A: is the upper bound growth rate of an algorithm

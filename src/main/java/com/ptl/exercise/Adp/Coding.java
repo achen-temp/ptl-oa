@@ -1,5 +1,10 @@
 package com.ptl.exercise.Adp;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
+
 class EdwardYin_12092022{
     //1. single sell profit, find best buy and sell value
        //https://www.educative.io/m/find-maximum-single-sell-profit
@@ -21,4 +26,7 @@ class EdwardYin_12092022{
 
 }
 public class Coding {
+    public static void main(String[] args) {
+
+    }
 }

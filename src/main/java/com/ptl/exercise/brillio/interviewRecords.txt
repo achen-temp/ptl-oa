@@ -1,0 +1,7 @@
+7/16/2023 --- Alfie Li ---- interviewer: Zitong Zhang (Calisto)
+1. self introduction and most recent project introduction
+2. challange.
+3. If your application is slow, what could be the reasons
+4. how do you debug in your project
+5. After you fix the bug, how do you verify it is working? --- test coverage, automation test
+Coding: 1. Leetcode 54.  2. Leetcode 567 (using sorting of s1 and substring in s2)

@@ -84,12 +84,8 @@ public class Algo_MinimalOperations {
 
 
     public static void main(String[] args) {
-        int[] arr = {7, 1, 3, 2, 4, 5, 6};
-        int result = minimumSwaps(arr);
-        System.out.println(result);
-        System.out.println("-------------");
-        List<Integer> nums = Arrays.asList(4, 3, 2, 1);
-        int result2 = miniSwaps(nums);
+        List<Integer> nums = Arrays.asList(2,10,8,6,4);
+        int result2 = solve(nums);
         System.out.println(result2);
     }
 }
