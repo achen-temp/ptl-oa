@@ -106,6 +106,8 @@
     A: docker top
 28: A cluster may want to have a dedicated manager node that does NOT serve as a worker node,
     A: docker swarm join --availability=drain
+29: Q: Read code about "java 6, java 7 and java 8" and what is the output
+    A: Testing: java 6   FALSE
 
 ------ TEST 2 ----------
 1.

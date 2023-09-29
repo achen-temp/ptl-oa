@@ -1,5 +1,8 @@
 package com.ptl.exercise.Aditi;
 
+import java.util.Arrays;
+import java.util.List;
+
 interface CanHop {
 }
 
@@ -23,5 +26,20 @@ public class Test {
         int[] stepx = {-1, 1, 1, -1};
         int[] stepy = {1, -1, 1, -1};
 
+    }
+}
+@FunctionalInterface
+interface NumberComparator{
+    boolean compareNumbers(int x, int y);
+}
+
+class Feifei{
+    public static void main(String[] args) {
+        List<String> javaVersions = Arrays.asList("java 6", "java 7", "java 8");
+        boolean flag = javaVersions.stream().allMatch(str -> {
+            System.out.println("Testing: " + str);
+            return str.contains("8");
+        });
+        System.out.println(flag);
     }
 }
