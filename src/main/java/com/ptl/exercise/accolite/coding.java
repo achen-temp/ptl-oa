@@ -12,7 +12,7 @@ public class coding {
      * String s1 = "Mangoes, Apples, Mangoes, Grapes"
      * String s2 = "Orange, Mangoes, Watermellon, Blue Berries, Watermellon"
      * <p>
-     * return duplicates in each string and then remove duplicates appeared in another screen
+     * return duplicates in each string and then remove duplicates appeared in another string
      * <p>
      * result1 -> "Apples,Grapes"
      * result2 -> "Orange, Mangoes, Blue Berries"

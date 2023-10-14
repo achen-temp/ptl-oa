@@ -8,27 +8,27 @@ import java.util.Set;
 public class Outcome_StringSegmentation {
 
     public static String solve(String S, List<String> wordDict){
-        Set<String> wordSet = new HashSet<>(wordDict);
-        Boolean[] memo = new Boolean[S.length()];
-        return canBreak(S, wordDict, 0, memo) ? "true" : "false";
+
+        Boolean[] arr = new Boolean[S.length()];
+        return String.valueOf(helper(S, wordDict, 0, arr));
     }
 
-    private static boolean canBreak(String s, List<String> wordDict, int start, Boolean[] memo) {
-        if (start == s.length()) {
+    private static boolean helper(String input, List<String> wordDict, int index, Boolean[] arr) {
+        if (index == input.length()) {
             return true;
         }
-        if (memo[start] != null) {
-            return memo[start];
+        if (arr[index] != null) {
+            return arr[index];
         }
 
-        for (int end = start + 1; end <= s.length(); end++) {
-            if (wordDict.contains(s.substring(start, end)) && canBreak(s, wordDict, end, memo)) {
-                memo[start] = true;
+        for (int right = index + 1; right <= input.length(); right++) {
+            if (wordDict.contains(input.substring(index, right)) && helper(input, wordDict, right, arr)) {
+                arr[index] = true;
                 return true;
             }
         }
 
-        memo[start] = false;
+        arr[index] = false;
         return false;
     }
 
