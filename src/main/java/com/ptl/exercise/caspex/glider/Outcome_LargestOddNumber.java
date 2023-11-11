@@ -1,8 +1,10 @@
 package com.ptl.exercise.caspex.glider;
 
+import java.util.Arrays;
+
 public class Outcome_LargestOddNumber {
 
-    public static int findLargestOddNumber(String S) {
+    public static int findLargestOddNumber1(String S) {
         String[] splits = S.split("[a-z]+");
         int result = -1;
 
@@ -16,6 +18,16 @@ public class Outcome_LargestOddNumber {
         }
 
         return result;
+    }
+
+    public static int findLargestOddNumber(String S) {
+        return Arrays.stream(S.split("[a-z]+"))
+                .filter(w -> !w.isEmpty())
+                .map(e -> Integer.valueOf(e))
+                .filter(v -> v% 2 == 1)
+                .mapToInt(v -> v)
+                .max()
+                .orElse(-1);
     }
 
     public static void main(String[] args) {

@@ -7,7 +7,36 @@ import java.util.Set;
 
 public class Outcome_StringSegmentation {
 
-    public static String solve(String S, List<String> wordDict){
+    //this solution pass ALL test cases
+    public static String solve(String S,List<String> wordDict){
+        //Write your code here
+        int n = S.length();
+        Set<String> set = new HashSet<>(wordDict);
+        boolean[] DP = new boolean[n + 1];
+        DP[0] = true;
+        for(int right = 0; right < n; right++) {
+            boolean canBreak = false;
+            for(int left = 0; left <= right; left++) {
+                boolean canBreakLeft = DP[left];
+                boolean cnaBreakRight = set.contains(S.substring(left, right + 1));
+                if(canBreakLeft && cnaBreakRight) {
+                    canBreak = true;
+                }
+                DP[right + 1] = canBreak;
+            }
+        }
+        return DP[n] ? "true" : "false";
+    }
+
+    /**
+     * NOT SURE WHY THIS RECURSION SOLUTION WILL FAILL THE TESTS
+     * (It shows ALL PASS when doing the OA, but reports says it FAILED ALL test cases)
+     * (USE another solution: DP instead)
+     * @param S
+     * @param wordDict
+     * @return
+     */
+    public static String solve1(String S, List<String> wordDict){
 
         Boolean[] arr = new Boolean[S.length()];
         return String.valueOf(helper(S, wordDict, 0, arr));

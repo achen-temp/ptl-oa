@@ -579,3 +579,178 @@ class StringTest{
         return dp[s.length()];
     }
 }
+
+class BOA{
+    //find one pair
+    public static int[] twoSum(int[] nums, int sum){
+        if(nums == null || nums.length <= 1){
+            return new int[0];
+        }
+        int[] result = new int[2];
+        Map<Integer, Integer> map = new HashMap<>();
+        for(int i = 0; i < nums.length; i++){
+            int num = nums[i];
+            if(map.containsKey(sum - num)){
+                result[0] = map.get(sum - num);
+                result[1] = i;
+                break;
+            }else{
+                map.put(num, i);
+            }
+        }
+        return result;
+    }
+
+    //find all pairs
+    public static List<int[]> twoSum2(int[] nums, int sum){
+        if(nums == null || nums.length <= 1){
+            return null;
+        }
+        List<int[]> result = new ArrayList<>();
+        Map<Integer, List<Integer>> map = new HashMap<>();
+        for(int i = 0; i < nums.length; i++){
+            int num = nums[i];
+            if(map.containsKey(sum - num)){
+                int[] arr = new int[2];
+                arr[0] = map.get(sum - num).get(0);
+                arr[1] = i;
+                result.add(arr);
+                map.get(sum - num).remove(0);
+                //break;
+            }else{
+                if(! map.containsKey(num)) {
+                    map.put(num, new ArrayList<>());
+                }
+                map.get(num).add(i);
+            }
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {2,3,2,3};
+        List<int[]> res = twoSum2(nums, 5);
+        res.forEach(ar -> System.out.println(Arrays.toString(ar)));
+    }
+}
+
+class Splits{
+
+    public static List<List<List<Integer>>> splitArrayIntoKSubarrays(int[] arr, int k) {
+        List<List<List<Integer>>> result = new ArrayList<>();
+        splitArray(arr, k, 0, new ArrayList<>(), new ArrayList<>(), result);
+        return result;
+    }
+
+    private static void splitArray(int[] arr, int k, int startIndex, List<Integer> currentSubarray, List<List<Integer>> currentResult, List<List<List<Integer>>> result) {
+        if (k == 0) {
+            // If we have used up all subarrays and processed all elements, add the current subarray to the result.
+            result.add(new ArrayList<>(currentResult));
+            return;
+        }
+
+        if (startIndex >= arr.length || k == 0) {
+            // Invalid state, return without adding to the result.
+            return;
+        }
+
+        for (int i = startIndex; i < arr.length; i++) {
+            currentSubarray.add(arr[i]);
+            currentResult.add(currentSubarray);
+            splitArray(arr, k - 1, i + 1, new ArrayList<>(), currentResult, result);
+            currentResult.remove(currentResult.size() - 1);
+            currentSubarray.remove(currentSubarray.size() - 1);
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        int k = 3;
+
+        List<List<List<Integer>>> subarrays = splitArrayIntoKSubarrays(arr, k);
+        for (List<List<Integer>> kSubarrays : subarrays) {
+            for (List<Integer> subarray : kSubarrays) {
+                System.out.println(subarray);
+            }
+            System.out.println("---");
+        }
+    }
+}
+
+class Bart{
+
+    public static void main(String[] args) {
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1, "c");
+        map.put(4, "a");
+        map.put(2, "d");
+        map.put(3, "b");
+        map.entrySet().stream().sorted((e1, e2) -> e2.getKey() - e1.getKey()).forEach(e -> System.out.println(e.getKey() + "," + e.getValue()));
+        map.entrySet().stream().sorted((e1, e2) -> e2.getValue().compareTo(e1.getValue())).forEach(e -> System.out.println(e.getKey() + "," + e.getValue()));
+    }
+
+}
+
+class Test22{
+    static int[][] solution(int[][] bubbles, int[][] operations){
+        for(int[] operation: operations){
+            playerClick(bubbles, operation);
+            boardUpdate(bubbles);
+        }
+        return bubbles;
+    }
+
+    static void playerClick(int[][] bubbles, int[] operation){
+        int row = operation[0], col = operation[1];
+        if(bubbles[row][col] != 0){
+            if(bubbles[row - 1][col - 1] == bubbles[row][col]){
+                bubbles[row - 1][col - 1] = 0;
+            }
+            if(bubbles[row - 1][col + 1] == bubbles[row][col]){
+                bubbles[row - 1][col + 1] = 0;
+            }
+            if(bubbles[row + 1][col - 1] == bubbles[row][col]){
+                bubbles[row + 1][col - 1] = 0;
+            }
+            if(bubbles[row + 1][col + 1] == bubbles[row][col]){
+                bubbles[row + 1][col + 1] = 0;
+            }
+            bubbles[row][col] = 0;
+        }
+    }
+
+    static void boardUpdate(int[][] board){
+        //check every column, move all 0s up
+        for(int col = 0; col < board[0].length; col++){
+
+        }
+    }
+
+
+    public static void main(String[] args) {
+        //1,2,2,1,3,4,5
+        int[][] bubbles = {
+                {1, 1, 1, 4, 3},
+                {4, 1, 2, 3, 3},
+                {1, 5, 1, 1, 1},
+                {4, 3, 2, 2, 4}
+        };
+
+        int[][] operations = {
+                {1, 1},
+                {3, 3},
+                {2, 2},
+                {3, 0}
+        };
+
+        int[][] result = solution(bubbles, operations);
+
+        // Print the result
+        for (int[] row : result) {
+            for (int value : row) {
+                System.out.print(value + " ");
+            }
+            System.out.println();
+        }
+    }
+}

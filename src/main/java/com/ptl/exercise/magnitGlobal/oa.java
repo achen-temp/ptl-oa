@@ -1,5 +1,8 @@
 package com.ptl.exercise.magnitGlobal;
 
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
+
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -15,99 +18,113 @@ public class oa {
     }
 
     public static void main(String[] args) {
-        int[] arr = {1000, 500, 2000, 8000, 1500};
+        List<Integer> arr = Arrays.asList(1000, 500, 2000, 8000, 1500);
         int K = 3; // Number of subarrays
-
-        List<List<List<Integer>>> combinations = splitArray(arr, K);
-
-        for (List<List<Integer>> combination : combinations) {
-            //System.out.println(combination);
-        }
+        System.out.println(partition(arr, arr.size(), K));
     }
 
-    public static List<List<List<Integer>>> splitArray(int[] arr, int k) {
-        List<List<List<Integer>>> result = new ArrayList<>();
-        List<List<Integer>> currentCombination = new ArrayList<>();
-        splitArrayRecursive(arr, k, 0, new ArrayList<>(), currentCombination, result);
-        return result;
-    }
-
-    private static void splitArrayRecursive(int[] arr, int k, int currentIndex, List<Integer> list, List<List<Integer>> currentCombination, List<List<List<Integer>>> result) {
+    public static int partition(List<Integer> list, int n, int k){
         if(k == 1){
-            //add reminder array
-            //System.out.println(list);
-            System.out.println(currentCombination);
-            return;
+            return findMax(list, 0, n - 1);
+        }
+        if(n == 1){
+            return list.get(0);
         }
 
-        // Include the current element in the current subarray
-        for(int i = currentIndex; i < arr.length; i++){
-            if(k > 1){
-                list.add(arr[i]);
-                currentCombination.add(new ArrayList<>(list));
-                splitArrayRecursive(arr, k - 1, i + 1, list, currentCombination, result);
-                currentCombination.remove(currentCombination.size() - 1);
-                list.remove(list.size() - 1);
-            }
+        int leastSum = Integer.MAX_VALUE;
+        for(int i = 1; i < n; i++){
+            leastSum = Math.min(leastSum,
+                    Math.max(partition(list, i, k - 1), findMax(list, i, n - 1)));
         }
+        return leastSum;
     }
 
-
-    /*
-    public static void main(String[] args) {
-        List<Integer> costs = Arrays.asList(1000, 500, 2000, 8000, 1500);
-        int weeks = 3;
-        int result = leastSumOfSubGroup(costs, weeks);
-        System.out.println(result);
+    public static int findMax(List<Integer> list, int from, int to){
+        int max = Integer.MIN_VALUE;
+        for(int i = from; i <= to; i++){
+            max = Math.max(max, list.get(i));
+        }
+        return max;
     }
-    */
 
 
 }
 
-class Test2{
+class BinarySearchWay{
+    class Solution {
+        private int minimumSubarraysRequired(int[] nums, int maxSumAllowed) {
+            int currentSum = 0;
+            int splitsRequired = 0;
 
-    public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 4, 5, 6};
-        int K = 3;
-
-        // Find all the possible ways to split the array into K subarrays
-        List<List<Integer>> allSplits = findSplits(arr, K);
-
-        // Print all the possible splits
-        for (List<Integer> split : allSplits) {
-            for (int i = 0; i < split.size(); i++) {
-                System.out.print(split.get(i));
-                if (i < split.size() - 1) {
-                    System.out.print(", ");
+            for (int element : nums) {
+                // Add element only if the sum doesn't exceed maxSumAllowed
+                if (currentSum + element <= maxSumAllowed) {
+                    currentSum += element;
+                } else {
+                    // If the element addition makes sum more than maxSumAllowed
+                    // Increment the splits required and reset sum
+                    currentSum = element;
+                    splitsRequired++;
                 }
             }
-            System.out.println();
+
+            // Return the number of subarrays, which is the number of splits + 1
+            return splitsRequired + 1;
+        }
+
+        public int splitArray(int[] nums, int m) {
+            // Find the sum of all elements and the maximum element
+            int sum = 0;
+            int maxElement = Integer.MIN_VALUE;
+            for (int element : nums) {
+                sum += element;
+                maxElement = Math.max(maxElement, element);
+            }
+
+            // Define the left and right boundary of binary search
+            int left = maxElement;
+            int right = sum;
+            int minimumLargestSplitSum = 0;
+            while (left <= right) {
+                // Find the mid value
+                int maxSumAllowed = left + (right - left) / 2;
+
+                // Find the minimum splits. If splitsRequired is less than
+                // or equal to m move towards left i.e., smaller values
+                if (minimumSubarraysRequired(nums, maxSumAllowed) <= m) {
+                    right = maxSumAllowed - 1;
+                    minimumLargestSplitSum = maxSumAllowed;
+                } else {
+                    // Move towards right if splitsRequired is more than m
+                    left = maxSumAllowed + 1;
+                }
+            }
+
+            return minimumLargestSplitSum;
         }
     }
+}
 
-    private static List<List<Integer>> findSplits(int[] arr, int K) {
-        List<List<Integer>> allSplits = new ArrayList<>();
+class Test{
+      public Test(){
+          Bar b = new Bar();
+          Bar b1 = new Bar();
+          update(b);
+          update(b1);
+          b1 = b;
+          update(b);
+          update(b1);
+      }
+      private void update(Bar bar){
+          bar.x = 20;
+          System.out.println(bar.x);
+      }
 
-        // Recursively find all the possible splits
-        findSplits(arr, 0, K, new ArrayList<>(), allSplits);
-
-        return allSplits;
+    public static void main(String[] args) {
+        new Test();
     }
-
-    private static void findSplits(int[] arr, int start, int K, List<Integer> split, List<List<Integer>> allSplits) {
-        // Base case
-        if (K == 0) {
-            allSplits.add(new ArrayList<>(split));
-            return;
-        }
-
-        // Recursive case
-        for (int i = start; i < arr.length; i++) {
-            split.add(arr[i]);
-            findSplits(arr, i + 1, K - 1, split, allSplits);
-            split.remove(split.size() - 1);
-        }
+    private class Bar{
+              int x = 10;
     }
 
 }
