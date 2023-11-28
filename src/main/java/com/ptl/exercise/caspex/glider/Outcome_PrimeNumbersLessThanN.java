@@ -7,18 +7,18 @@ public class Outcome_PrimeNumbersLessThanN {
 
     //find all prime numbers smaller than N
     public static int solve(int N){
-        List<Integer> ar = new ArrayList<>();
-        boolean[] valids = new boolean[N];
+        List<Integer> list = new ArrayList<>();
+        boolean[] booleans = new boolean[N];
 
         for(int i = 2; i < N; i++){
-            if(!valids[i]){
-                ar.add(i);
+            if(!booleans[i]){
+                list.add(i);
                 for(int k = i * i; k < N; k += i){
-                    valids[k] = true;
+                    booleans[k] = true;
                 }
             }
         }
-        return ar.size();
+        return list.size();
     }
 
     public static void main(String[] args) {

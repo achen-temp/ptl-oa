@@ -11,21 +11,21 @@ public class Outcome_StringSegmentation {
     public static String solve(String S,List<String> wordDict){
         //Write your code here
         int n = S.length();
-        Set<String> set = new HashSet<>(wordDict);
-        boolean[] DP = new boolean[n + 1];
-        DP[0] = true;
+        Set<String> hashSet = new HashSet<>(wordDict);
+        boolean[] valids = new boolean[n + 1];
+        valids[0] = true;
         for(int right = 0; right < n; right++) {
             boolean canBreak = false;
             for(int left = 0; left <= right; left++) {
-                boolean canBreakLeft = DP[left];
-                boolean cnaBreakRight = set.contains(S.substring(left, right + 1));
-                if(canBreakLeft && cnaBreakRight) {
+                boolean canBreakLeft = valids[left];
+                boolean canBreakRight = hashSet.contains(S.substring(left, right + 1));
+                if(canBreakLeft && canBreakRight) {
                     canBreak = true;
                 }
-                DP[right + 1] = canBreak;
+                valids[right + 1] = canBreak;
             }
         }
-        return DP[n] ? "true" : "false";
+        return valids[n] ? "true" : "false";
     }
 
     /**

@@ -7,14 +7,20 @@ public class Outcome_NotIncreasingNotDecreasing {
 
     public static int solve(List<Integer> ar){
         int ans = 0;
-        for (int i = 0; i < ar.size() - 2; i++)
-        {
-            if ( ((ar.get(i) > ar.get(i + 1) && ar.get(i + 1) > ar.get(i + 2)))
-                    ||
-                    (ar.get(i) < ar.get(i + 1) && ar.get(i + 1) < ar.get(i + 2)) )
-                ans++;
+        if(ar == null || ar.size() <= 1){
+            return ans;
         }
-
+        for(int i = 0; i < ar.size() - 2; i++){
+            int curr = ar.get(i);
+            int next = ar.get(i + 1);
+            int next2 = ar.get(i + 2);
+            if(curr < next && next < next2){
+                ans++;
+            }
+            if(curr > next && next > next2){
+                ans++;
+            }
+        }
         return ans;
     }
 

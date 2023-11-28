@@ -11,44 +11,36 @@ public class Outcome_GrandNumberGame {
      * @return
      */
     public static int solve(List<Integer> arr){
-        int maxStates = 1 << arr.size(); // 2^(nums array size)
-        int finalMask = maxStates - 1;
+        int dpSize = 1 << arr.size();
+        //System.out.println(arr.size() + "," + dpSize);
+        int[] dp = new int[dpSize];
 
-        // 'dp[i]' stores max score we can get after picking remaining numbers represented by 'i'.
-        int[] dp = new int[maxStates];
-
-        // Iterate on all possible states one-by-one.
-        for (int state = finalMask; state >= 0; state--) {
-            // If we have picked all numbers, we know we can't get more score as no number is remaining.
-            if (state == finalMask) {
-                dp[state] = 0;
+        for (int i = dpSize - 1; i >= 0; i--) {
+            if (i == dpSize - 1) {
+                dp[i] = 0;
                 continue;
             }
 
-            int numbersTaken = Integer.bitCount(state);
-            int pairsFormed = numbersTaken / 2;
-            // States representing even numbers are taken are only valid.
-            if (numbersTaken % 2 != 0) {
+            int bitCount = Integer.bitCount(i);
+            if(bitCount % 2 != 0){
                 continue;
             }
+            int pairs = bitCount / 2;
 
-            // We have picked 'pairsFormed' pairs, we try all combinations of one more pair now.
-            // We iterate on two numbers using two nested for loops.
-            for (int firstIndex = 0; firstIndex < arr.size(); firstIndex++) {
-                for (int secondIndex = firstIndex + 1; secondIndex < arr.size(); secondIndex++) {
-                    // We only choose those numbers which were not already picked.
-                    if (((state >> firstIndex) & 1) == 1 || ((state >> secondIndex) & 1) == 1) {
+            for (int j = 0; j < arr.size(); j++) {
+                for (int k = j + 1; k < arr.size(); k++) {
+                    if (((i >> j) & 1) == 1 || ((i >> k) & 1) == 1) {
                         continue;
                     }
-                    int currentScore = (pairsFormed + 1) * gcd(arr.get(firstIndex), arr.get(secondIndex));
-                    int stateAfterPickingCurrPair = state | (1 << firstIndex) | (1 << secondIndex);
-                    int remainingScore = dp[stateAfterPickingCurrPair];
-                    dp[state] = Math.max(dp[state], currentScore + remainingScore);
+                    int score = (pairs + 1) * gcd(arr.get(j), arr.get(k)); //gcd method is defined below
+                    int index = i | (1 << j) | (1 << k);
+                    int remainingScore = dp[index];
+                    dp[i] = Math.max(dp[i], score + remainingScore);
                 }
             }
         }
 
-        // Returning score we get from 'n' remaining numbers of array.
+        //System.out.println(Arrays.toString(dp));
         return dp[0];
     }
 
@@ -59,9 +51,13 @@ public class Outcome_GrandNumberGame {
         return gcd(b, a % b);
     }
 
+
     public static void main(String[] args) {
-        List<Integer> arr = Arrays.asList(1,2,3,4,5,6);
-        int highestScore = solve(arr);
-        System.out.println("Highest Score: " + highestScore);
+        List<Integer> arr1 = Arrays.asList(1,2,3,4,5,6);
+        int highestScore1 = solve(arr1);
+        System.out.println("Highest Score: " + highestScore1); //14
+        List<Integer> arr2 = Arrays.asList(3,4,9,5);
+        int highestScore2 = solve(arr2);
+        System.out.println("Highest Score: " + highestScore2);
     }
 }

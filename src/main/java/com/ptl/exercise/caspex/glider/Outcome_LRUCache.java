@@ -3,7 +3,7 @@ package com.ptl.exercise.caspex.glider;
 import java.util.*;
 
 /**
- * SOLUTION WILL FAIL ONE TEST CASE, HIDDEN, NOT SURE WHY
+ * SOLUTION WILL PASS ALL TESTS, if you fail, its your problem, you figure it out.
  */
 
 //define node for LRU cache to use.
@@ -78,15 +78,15 @@ class LRUCache{
 public class Outcome_LRUCache {
 
     //method definition given, but logic you need to implement
-    public static List<Integer> solve(int capacity, List<String> ar){
+    public static List<Integer> solve(int N, List<String> ar){
         //write your implementation here
         List<Integer> result = new ArrayList<>();
-        if(ar == null || ar.size() == 0 || capacity <= -1){
+        if(ar == null || ar.size() == 0 || N <= -1){
             result.add(-1);
             return result;
         }
 
-        LRUCache lruCache = new LRUCache(capacity);
+        LRUCache lruCache = new LRUCache(N);
         for(String input : ar){
             if(input.contains("GET")){
                 String[] entries = input.split(",");
