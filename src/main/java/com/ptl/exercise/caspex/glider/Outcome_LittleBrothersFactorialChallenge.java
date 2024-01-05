@@ -44,6 +44,7 @@ public class Outcome_LittleBrothersFactorialChallenge {
                 82,85,86,87
         };
         //top choose java 8
+        //remember to "import java.util.stream.Collectors;"" on top
         List<Integer> result = Arrays.stream(groups).filter(a -> a >= m && a <= n).collect(Collectors.toList());
         return result.size() == 0 ? Arrays.asList(0) : result;
     }

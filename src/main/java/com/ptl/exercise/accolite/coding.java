@@ -39,18 +39,6 @@ public class coding {
     }
 }
 
-class Constructor{
-    static String str;
-    public void Constructor(){
-        System.out.println("In Constructor");
-        str = "Hello World";
-    }
-
-    public static void main(String[] args) {
-        Constructor c = new Constructor();
-        System.out.println(str);
-    }
-}
 
 class BitShift{
     public static void main(String[] args) throws IllegalAccessException, InstantiationException, ClassNotFoundException {

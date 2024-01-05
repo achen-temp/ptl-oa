@@ -1,4 +1,4 @@
-package com.ptl.exercise.koriHackerrank;
+package com.ptl.exercise.ig.hackerRank;
 
 
 import java.util.Arrays;
