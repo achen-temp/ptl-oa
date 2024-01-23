@@ -1,10 +1,10 @@
-package com.ptl.exercise.kori.magnitGlobal;
+package com.ptl.exercise.ig.magnitGlobal;
 
 public class Ood_StudentEnrollmentNumber {
 
 }
 
-// write about the "solution" class
+// write above the "solution" class
 class Student {
 
     private static int enrollmentNumber = 0;

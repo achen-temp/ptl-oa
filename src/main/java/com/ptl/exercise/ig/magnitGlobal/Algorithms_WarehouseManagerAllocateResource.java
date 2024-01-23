@@ -1,4 +1,4 @@
-package com.ptl.exercise.kori.magnitGlobal;
+package com.ptl.exercise.ig.magnitGlobal;
 
 import java.util.Arrays;
 import java.util.List;
@@ -12,7 +12,7 @@ public class Algorithms_WarehouseManagerAllocateResource {
 
     }
 
-    public static int minimumResources(List<Integer> storageA, List<Integer> storageB) {
+    public static int minimumStorage(List<Integer> storageA, List<Integer> storageB) {
         if (storageA.isEmpty() || storageB.isEmpty()) {
             return -1;
         }

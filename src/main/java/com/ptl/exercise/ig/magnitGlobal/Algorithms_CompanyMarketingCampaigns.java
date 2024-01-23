@@ -1,4 +1,4 @@
-package com.ptl.exercise.kori.magnitGlobal;
+package com.ptl.exercise.ig.magnitGlobal;
 
 import static org.junit.Assert.assertEquals;
 
@@ -12,7 +12,7 @@ import java.util.List;
  * find the max number in each sub-array and sum all the max number
  * find the smallest sum
  */
-public class Algorithms_MinimumWeeklyInput {
+public class Algorithms_CompanyMarketingCampaigns {
 
     public static void main(String[] args) {
         List<Integer> costs1 = Arrays.asList(3000, 1000, 4000);
@@ -25,6 +25,7 @@ public class Algorithms_MinimumWeeklyInput {
     }
 
     //NOT SURE IF THIS IS THE BEST SOLUTION, NOT SURE IF IT WILL PASS ALL TESTS
+    //UPDATE: THIS IS BASIC SOLUIION WHICH ONLY PASS 3/15 TESTS
     public static int minimumWeeklyInput(List<Integer> costs, int weeks) {
          List<List<List<Integer>>> allCombinations = findAllSplits(costs, weeks);
          int result = Integer.MAX_VALUE;

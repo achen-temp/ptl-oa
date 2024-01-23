@@ -53,11 +53,14 @@ SET2::::
             public CarService carService(){...}
         }
 6.  java: Basic String Manipulation -- 必要快速写
-    A:  if(Character.isLowerCase(s.charAt(i))){
-           newStr.set(i, Character.toUpperCase(s.charAt(i)));
-        }
-        else if(Character.isUpperCase(s.charAt(i))){
-            newStr.setCharAt(i, Character.toLowerCase(s.charAt(i)));
+    A:  for(int i = 0; i < strl.length(); i++){
+            char c = strl.length();
+            if(Character.isLowerCase(c)){
+                newStr.setCharAt(i, Character.toUpperCase(c));
+            }
+            else if(Character.isUpperCase(c)){
+                newStr.setCharAt(i, Character.toLowerCase(c));
+            }
         }
 7.  java: cleanTxtFiles() remove all non alphabet characters from .txt file
     A:  Files.walkFileTree(path, new SimpleFileVisitor(startPath)
@@ -73,6 +76,8 @@ SET2::::
         TextMessage message = session.createTextMessage(text);
 10. Spring Boot Log4J levels
     A: FATAL,  ERROR, WARN, INFO, DEBUG, TRACE
+11. In kafka, what is the logical feed name to which records are published and supports a multi-subscriber model?
+    A: Topic
 
 
 SET3:::::

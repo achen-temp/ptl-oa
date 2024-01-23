@@ -1,4 +1,4 @@
-package com.ptl.exercise.kori.magnitGlobal;
+package com.ptl.exercise.ig.magnitGlobal;
 
 import java.util.ArrayList;
 import java.util.Arrays;

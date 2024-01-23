@@ -1,0 +1,6 @@
+1. Password Installment
+   A: Buffer.from('password installment', 'ascii')
+   A: buf.toString('hex')
+   A: getInstallment()
+2. onChange function to set value
+   
