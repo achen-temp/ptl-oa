@@ -8,7 +8,7 @@ public class Algorithms_WarehouseManagerAllocateResource {
     public static void main(String[] args) {
         List<Integer> storageA = Arrays.asList(1, 2, 0, 4);
         List<Integer> storageB = Arrays.asList(4, 5, 0, 0, 1);
-        System.out.println(minimumResources(storageA, storageB));
+        System.out.println(minimumStorage(storageA, storageB));
 
     }
 

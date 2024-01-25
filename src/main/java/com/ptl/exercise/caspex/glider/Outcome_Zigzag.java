@@ -88,7 +88,7 @@ class Node {
     int data;
     Node left, right, nextRight;
 
-    Node(int value) {
+    public Node(int value) {
         data = value;
         left = null;
         right = null;

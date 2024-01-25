@@ -1,0 +1,12 @@
+Q: class MainActivity : AppCompatActivity() 
+A:  savedInstanceState
+    getBoolean
+    putBoolean
+
+Q: Android SDK to create a menu using java
+A:  getMenuInflater().inflat(..)
+    public boolean onOptionsItemSelected
+    switch(item.getItemId())
+
+Q: which of below is to handle null exception in kotlin?
+A: Elvis Operator
