@@ -23,6 +23,12 @@ public class RestAPI_CountryCodes {
     public static final String URL = "https://jsonmock.hackerrank.com/api/countries?name=";
 
     //USE THIS METHOD - remember to import the 4 org.json.simple dependencies
+    /*
+import org.json.simple.JSONArray; //must have
+import org.json.simple.JSONObject; //must have
+import org.json.simple.parser.JSONParser; //must have
+import org.json.simple.parser.ParseException; //must have
+     */
     public static String getPhoneNumbers(String country, String phoneNumber) {
         int page = 1;
         long totalPage = 1;

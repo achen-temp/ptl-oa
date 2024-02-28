@@ -55,11 +55,11 @@
 21: Tree Traversal 1: PostOrder -> DEBFGCA, PreOrder -> ABDECFG, whats inorder?
     A: DBEAFCG
 22: Meaning of AVL Tree (difference between heights of left and right subtrees cannot be more than one for all nodes. )
-    A: None of the above
+    A: a BST with the property that each node has equal difference between left and right sub tree.
 23: String Construction : 5 points to add and append, abhihibhihi
     A: 30 ( a + b + h + i + hi + bhihi)
 24: Identify the Sorting Algorithm. find largest first, after 4 iterations, [2,4,5,7,8,1,3,6]
-    A: The algorithm is selection sort
+    A: The algorithm may be insertion sort but is not merge sort.
 25: Uses of a Restricted Dequeue
     A: both as a queue and as a stack
 26: How many comparison in a merge sort, (to merge two sorted arrays with size m and n)

@@ -32,6 +32,7 @@ public class Algo_GroupWords extends Thread {
         char[] arr = word.toCharArray();
         Arrays.sort(arr);
         return new String(arr);
+        
     }
 
     public static void main(String[] args) {

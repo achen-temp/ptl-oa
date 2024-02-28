@@ -10,3 +10,21 @@ A:  getMenuInflater().inflat(..)
 
 Q: which of below is to handle null exception in kotlin?
 A: Elvis Operator
+
+Q: Android: which of following is true for Kotlin variables
+A: val corresponds to final variable in java
+
+Q: Android SDK: private class DownloadFilesTask extends AsyncTask
+A:  doInBackground
+    onProgressUpdate
+    onPostExecute
+
+Q: Android SDK: public class PhoneAdapter extends RecyclerView.Adaptor
+A:  extends PhonesAdapter.PhoneViewHolder
+    onCreateViewHolder
+    extends RecyclerView.ViewHolder
+
+Q: Android manifest.xml "android:name=andorid.permission.ACCESS_WIFI_STATE"
+A:  uses-permission android:name="android.permission.ACCESS_WIFI_STATE 
+    action andorid:name="andorid.intent.action.MAIN"
+    activity android:parentAcitivityName 

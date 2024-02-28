@@ -41,7 +41,7 @@ public class Algorithms_PawnGameMaxScore {
         return dp[n - 1];
     }
 
-    // outside of the method
+    // outside of the 'maxGameScore' method
     public static boolean isPrime(int num) {
         if (num <= 1) {
             return false;

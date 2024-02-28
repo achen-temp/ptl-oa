@@ -7,8 +7,8 @@ import java.util.List;
 public class Algorithms_TravelerOptimalJourney {
 
     public static void main(String[] args) {
-        // List<Integer> cities = Arrays.asList(0, 100, 200, -500, -100, -150, -50);
-        List<Integer> cities = Arrays.asList(0, -10, -20, -30, 50);
+        List<Integer> cities = Arrays.asList(0, 100, 200, -500, -100, -150, -50);
+        //List<Integer> cities = Arrays.asList(5, 0, -20, 80, -40, -10);
         System.out.println(optimalJourneyTotal(cities)); // 100
     }
 

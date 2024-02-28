@@ -1,0 +1,53 @@
+1. TypeScript: Fibonacci numbers
+A:  return n;  //return 1 is wrong
+    fibonacciNumber(acc)
+    series
+
+2.  Add Rule (1. write code, 2. click "save all" 3. click "Luanch App", 4. new page, click "Add Rule" button, new entry should appear)
+A:  var addRuleBtn = document.getElementById("add-rule-btn");
+    var rulesDiv = document.querySelector(".rules");
+    var ruleDiv = document.querySelector(".rule");
+    addRuleBtn.addEventListener('click', function(){
+        var newRule = ruleDiv.cloneNode(true);
+        rulesDiv.appendChild(newRule);
+    });
+
+3.  TypeScript: counts from 1 to 1000 and skip number with 5
+A:  constructor(private digit: number);  //constructor(digit: number) is wrong
+    if(nbr.toString().indexOf(this.digit.toString()) !== -1);
+    for(int i = 0; i <= 1000; i++)
+
+4.  timezone san paulo, display_Ct
+A:  var x = new Date().toLocaleString("en-US", {timezone: 'America/San_Paulo'});
+    var x1 = x.getMonth ...
+    x1 = x1 + " - " + x.getHours() + ...
+    document.getElementById("ct").innerHTML = x1;
+
+5. Switch statement with x = 2
+A:  John
+
+6.  Automation Testing: AmazingShop QA manger wants to build
+A:  Given the tight deadline, finding the right resource with the right skill to complete the job will be challenging
+
+7.  Welcome to Glider
+A:  Glider to Welcome
+
+8.  Git -- left to right mapping
+A:  Move the whole branch to begin at the tip of        -------> rebase
+    Create a local copy of any remote repository        -------> clone
+    Create a remote, server side copy of the oringal    -------> fork
+    Discard commits in a private branch or throw away   -------> reset
+    Handle the changes when a single repository to      -------> branch
+    Bind together the histories of both the branches    -------> merge
+    Undo commits in a public branch                     -------> revert
+
+9.  Automation Tesing order
+A:  Acceptance Criteria -> Test Scenairios -> Test Scripts -> System Under Test 
+
+*10. Git order,  //[not sure about this answer ]  
+A:  feature branch  -> develop branch -> master branch -> maintenance branch   //(feature-dev-maint - master is WRONG)
+
+11. Appium selection with Part A and Part B 
+A:  Part A: ID,  Class, Xpath, AccessibilityID
+    Part B: Appium Inspector
+

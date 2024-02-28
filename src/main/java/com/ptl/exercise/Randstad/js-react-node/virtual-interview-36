@@ -1,0 +1,38 @@
+1.	What is a test plan?
+2.	Give a brief overview of QE engineering experience on native apps and automation using Appium. Also mention key project specifics and your role in the team. Be very specific. Be very specific.
+3.	What is the difference between waterfall and Agile methodologies?
+4.	How might you create testcases in an agile environment?
+5.	How might you create testcases in an agile environment?
+6.	What is Device Compatibility testing？
+7.	Explain automation framework/architecture of your recent project using Appium for native apps (iOS & Android) and how it works with integrations and dependencies
+8.	Can you provide Examples of Negative and Positive testing methodologies and how they differ?
+9.	What is End to End Testing?
+10.	For Mobile applications under test, can you give an example of client server architecture interaction. For Example Login.
+11.	What is Charles Proxy and how is it used?
+12.	What is a Race Condition?
+13.	What is the difference between a 400 and 500 error?
+14.	What is a 200 response mean?
+15.	Filing a Ticket: Jira (bug database). What would you include in your Jira?:
+16.	how would you start too debug a Crash error received in a native application?
+17.	Debug Scenario Part 1. The Native App is crashing on Android and on iOS when the Item Page for Lego Star Wars Toy displays.
+18.	Debug Scenario Part 2。 Lets say you determined that 1 out of 4 Badges that load on item page is causing the application to crash: How would you determine which badge is causing the crash. (Tools used)
+19.	What does it mean you're done or are able to Sign off on Testing when communicating to Cross functional teams and or Leadership?
+20.	What does Done/test complete mean and how do you properly communicate Done Status?
+21.	You near the end of the testing cycle for the feature initiative you are leading for E2E testing and are being asked by Project and program managers for sign off, but there are a few open bugs left open. How do you work with teams to get sign off with open bugs?
+22.	If you're leading a testing initiative for Native Mobile apps and working with another QE Test Lead from the Web team, How might you best collaborate with them as your piers? What actions might you take for example towards the goal of collaboration?
+23.	You have been asked to drive an E2E testing initiative for a new feature, the feature requires FE and BE changes, you have limited information to start, what is you're approach to getting more information?
+24.	Prioritization: How do you prioritize proposed testcases to reduce scope. Product says run 20 tests. How might you attempt/approach to reduce the scope. If scope can't be reduced how might you execute testcases.
+25.	You near the end of the testing cycle for the feature initiative you are leading for E2E testing, you have encountered a P1 critical bug, but you are getting pushback from the Project team since you're a few days away from sign off and the pressure to make the deadline for sign off is high. But you feel strongly this is a critical enough issue to block the release and or your ability to sign off. How do you make your case this should be resolved prior to release?
+26.	Instances where project/tasks hampered due to a team members negligence, and you are answerable to stake holders, how did you handle these situations
+27.	Assume your scripts are failing frequently with error saying 'Unable to find element' in Appium. What might be possible reasons, how you debug and fix this issue. Please give an example with your recent project experience. 
+28.	What is Page object Model? did you ever use it? if so, How it was helpful in your case.
+29.	Explain About your Framework, Have you used any interfaces in your framework?
+30.	What is Automation Testing Lifecycle. Can you please explain about entry and exit criteria for automation
+31.	What are the required capabilities to integrate any Cloud based  tool for instance, Sauce labs
+32.	Explain in detail a challenge you faced with Automation on iOS & Android using Appium and how did you resolve it?
+33.	Pros and Cons of Appium framework, explain with references to your project experince using Appium
+34. Coding question: 1. given integer array, find sum of all even numbers;  2. leetcode: long substring without repeating characters. 3. leetcode: LRU Cache implementation.
+35.	I have created multiple commits. when am trying to push my changes, and i see failure and push getting rejected. I am stuck..!! what is your approach in pushing your changes.
+36.	Explain automation framework/architecture of your recent project using Appium for native apps (iOS & Android) and how it works with integrations and dependencies.
+
+

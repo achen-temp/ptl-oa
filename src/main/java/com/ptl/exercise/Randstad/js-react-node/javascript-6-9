@@ -1,0 +1,129 @@
+1. Pega Developer, "Name" field on a screen
+A: Create a validate rule and call that in the flow action
+A: Make the name field as required in the Section rule
+
+2. NodeJS: luanch a cluster of node js process
+A:  const counter = require('os').cpus().length;
+    if (cluster.isMaster)
+    for (let i = 0; i < counter; i++)
+    ?? cluster.fork() ?
+
+3. CSS:  "int pulvinar filis.  ... HELLO  WORD!  Vesti..."
+A:  p.ex1 {display: none}
+    p.ex2 {display: inline}
+    p.ex3 {display: block}
+    p.ex4 {display: inline-block}
+
+4. NodeJs output of REPL
+A:  var a ==> undefined
+    var b=10 ==> undefined
+    c=a+b  ==> NaN
+    z ==> Uncaught ReferenceError: x is not defined
+    z=10  ==> 10
+    y=b+z ==> 20 
+
+5. Hashing installment Password Installment
+A:  Buffer.from('password installment', 'ascii')
+    buf.toString('hex')
+    getInstallment()
+
+6. Node: upload a node file 
+A:  var fomidable = require('formidable');
+    var path = files.myFile.path;
+    result.end();
+
+7. CSS: post css code
+A:  @import 'postcss-mixins'
+    @for $count from 1 to 9
+    .col-$count
+    width: $(count)0%;
+    if $type == active
+    ??
+
+8. Node: localhost:8080, 'Welcome to home page', localhost:8080/about "About us"
+A:  const server = http.createServer((req, res) 
+    if (req.url === '/')
+    if (req.url === '/about')
+    server.listen(8080);
+
+9. Node: data.json, and output to console
+A:  const data = require("./data.json"); //must have ./
+A:  fstat.readFile("data.json", function(error, data) //cannot have ./data.json in readFile
+    //the answer should not include line: const data = JSON.parse(data) !!!
+
+10. print "We are listening at 127.0.0.1 on port 8080"
+A:  console.log('We are listening at %s on port %s',A,B);
+    console.log("We are listening at "+A+" on port "+B);
+
+11. crud=['create', 'read' ...]
+A:  crud.forEach(createServer);
+    function CreateServer(x){}
+    if(req.url=='/'+x)
+    res.write(x); 
+
+12: Socket.io library. fill the code
+A:  const io = socketIo(server);
+    io.on('connection',...)
+    socket.emit('FromAPI', res.data.currently.temperature)
+
+13: our Script has started
+A:  const EE=require('events');
+    const event=new EE();
+    event.on('event'..)
+    event.emit('event');
+
+14: center align an elemnt of unknown width and height
+A:  position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+15: Ribbon: Database management system
+A:  postion: absolute;
+    content: '';
+    z-index: -15;
+    border-color: //order is Top, right, bottom, left 
+                  //: before -- is left ribbon,  : after -- is right ribbon  
+    //i dont know the answer exactly
+
+16: script list all files from the current directory and its sub folders
+A:  files = fs.readdirSync(currentPath);
+    AllFiles = AllFiles || [];
+    if(fs.statSync(currentPath + "/" + file).isDirectory())
+    AllFiles = listAllFiles(currentPath + "/" + file, AllFiles);
+    AllFiles.push(path.join(__dirname, currentPath, "/", file));
+    return AllFiles;
+
+17: add an image element into the div element
+A:  import icon from './icons';
+    var myIcon = new Image();
+    myIcon.src = icon;
+
+18: client IP address, all IPv4 addresses
+A:  var network = os.networkInterfaces();
+    network[net].forEach(function(net));
+    ++countIp;
+
+19: scripts with "Unable to open folder: " and 'File can not be deleted'
+A: 'File can not be deleted'
+
+20: CSS two rectange box: green and blue
+A:  position: relative;
+    z-index: -1;
+    opacity: 0.3
+
+
+21. Authorization: token   sdfsdfsxwe4r43scxdsdfswfedsf
+A:  const AH = req.headers['authorization'];
+    const token = AH && AH.split(' ')[1];
+    401
+    jwt.verify(token)
+    403
+
+
+
+22. express js to write "welcome"
+A:  const app = express();
+    app.get
+    res.send('Welcome')
+    app.listen(8080);

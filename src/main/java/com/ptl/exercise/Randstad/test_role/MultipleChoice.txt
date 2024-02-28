@@ -1,0 +1,48 @@
+Q. Different methods to generate reports in testNG
+A: IReporter
+A: ITestListener
+
+Q. Selenium: "wait" -  new WebDriverWait(driver, Duratrion.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(By.xpath("//a/h3")));  
+A: The code demonstrates explicit waits, allowing you to wait for a condition to occur.
+A: The timeout time for the wait in the code is ten seconds. 
+A: The above code initializes and waits till the element(link) becomes clickable. (?)
+
+Q: When User enters <region> and <country>
+A: When(/^User enters (.*) and (.*)$/)
+A: When(^User enters (.+) and (.+)$)
+
+Q: TestNG: complete code to get the given output: TestCaseOne executed, java.lang.AssertionError: The following asserts failed
+A:  SoftAssert sa = new SoftAssert();
+    sa.assertAll()'
+    Assert.assertFalse(true);
+
+Q: Feature: Feature file One; Scenario: Scenario Number One ;Given Scenario 1 in scenarios feature file
+A:  Thread ID - 13 - Feature Two Row 1 from scenario-two feature file.
+    Thread ID - 13 - Feature Two Row 2 from scenario-two feature file.
+    Thread ID - 14 - Scenario 1 from scenarios feature file One.
+    Thread ID - 14 - Scenario 2 from scenarios feature file One.
+
+Q: Suppose you need to design test cases for API testing using the REST tool for a point of sales application
+A:  Payment amount-related information
+A:  The database entries for the transaction to identify whether the credit card details are being stored or not
+A:  Transaction limits and Session Time out period
+A: The compatibility of the payemnt transaction in other latest browsers and mobile devices
+
+Q:  PART A: create firefox instance 
+            A: new FirefoxDriver()
+    PART B: how to get web element
+            A: findElement
+    PART C: wait for some time until a page is rendered properly
+            A: presenceOfElementLocated
+
+Q: CustomCapabilityMatcher
+A:  org.openqa.grid.internal.utils
+
+Q: selenium grid function to set max number of test scripts
+
+
+Q: Valid selenium web driver exceptions
+A:  
+
+Q: Selenium webDriver supported navigation methods
+A: 
