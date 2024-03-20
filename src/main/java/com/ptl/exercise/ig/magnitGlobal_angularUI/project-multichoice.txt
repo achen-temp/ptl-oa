@@ -1,0 +1,16 @@
+Q.  a guard should run before navigating to a child route.
+A:  canActivateChild
+
+Q.  What is an image sprinte?
+A:  Combining multiple images in  a single image file.
+
+Q.  HTML5: <required> <Submit> button
+A:  The "Required" attribute will check if the text field is empty on the client side when the form is submitted
+A:  The submit button can be clicked even if the text field is empty.
+
+Q:  app.component.ts name = "HELLO" condition = true
+A:  HELLO
+    Name: hello
+
+Q:  value for margin css style
+A:  margin: top right bottom left;  (choose according to this order)

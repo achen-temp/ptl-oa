@@ -23,7 +23,7 @@ public class Algo_ReadAllLetters {
         if (ar.get(ar.size() - 1) == 0 && result > 0) {
             result -= 1;
         }
-        return result; //how many failed? enlarge i cannot see it..
+        return result; 
     }
 
     public static void main(String[] args) {
@@ -32,3 +32,6 @@ public class Algo_ReadAllLetters {
     }
 
 }
+
+
+
