@@ -14,3 +14,7 @@ A:  HELLO
 
 Q:  value for margin css style
 A:  margin: top right bottom left;  (choose according to this order)
+
+Q:  select any invalid declarations for a pseduo-element
+A:  span::last-line{...}
+A:  .header::after-first-line{...}
