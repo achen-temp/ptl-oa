@@ -1,7 +1,7 @@
 package com.ptl.exercise.ig.magnitGlobal_angularUI;
 
 
-public class TravelCompanyPlatform {
+public class TravelCompanyWeatherPlatform {
 
 }
 
@@ -11,20 +11,7 @@ public class TravelCompanyPlatform {
 class WeatherController {
 
     
-    //remember to import for all the things if not auo-imported
-    import java.util.*;
-
-    import org.springframework.beans.factory.annotation.Autowired;
-    import org.springframework.beans.factory.annotation.GetMapping;
-    import org.springframework.beans.factory.annotation.PostMapping;
-    import org.springframework.beans.factory.annotation.DeleteMapping;
-    import org.springframework.beans.factory.annotation.RequestBody;
-    import org.springframework.beans.factory.annotation.ResponseEntity;
-    import org.springframework.beans.factory.annotation.ResponseStatus;
-
-    import com.hackerrank.weather.model.Weather;
-    import com.hackerrank.weather.repository.WeatherRepository;
-
+    //remember to import for all the annotations if not auo-imported
 
     //fill all below to the controller class
     @Autowired
