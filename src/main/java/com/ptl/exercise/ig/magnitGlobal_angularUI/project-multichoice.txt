@@ -22,3 +22,9 @@ A:  .header::after-first-line{...}
 Q:  seelct the valid css3 transofrmation statemetns
 A:  matrix()
 A:  rotate()
+
+Q:  div {resize: horizental}
+A:  It makes the div resizable by the user.
+
+Q:  define a token such that it is same as string token but generates unique value every time
+A:  Injector.create

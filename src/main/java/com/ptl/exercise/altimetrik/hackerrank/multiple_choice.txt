@@ -1,0 +1,17 @@
+Q:  @RestController UserController  {"name": "Duke", "surname": null}
+A:  BAD REQUSET 400 and a messge that 'user.surname' is validated by @NotEmpty annotatoin
+
+Q:  Java Keywords which keyword is used to take control out of the enclosing loop?
+A:  break
+
+Q:  Application Properties Overreide: 2 files with properties application.properties and application-prod.properties 
+A:  spring.profiles.active=prod 
+
+Q:  MySQL: PRIMARY KEY Constraint - which expression is NOT correct?
+A:  The primary key can contain NULL values, but this is highly undesirable for performance reasons.
+
+Q:  Java Variables: int a = 5; int b = 6; int c = a = b; what is value for c?
+A:  6
+
+Q:  Java Design Pattern: the following code represents which design pattern?
+A:  Singleton

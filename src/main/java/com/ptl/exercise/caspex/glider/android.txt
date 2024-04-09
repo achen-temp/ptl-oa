@@ -3,6 +3,11 @@ A:  savedInstanceState
     getBoolean
     putBoolean
 
+Q:  Andorid SDK, In the SharedPreferences code given below, select correct onOptions.
+A:  mPreferences = getSharedPreferences(SHARED_PREF_FILE, MODE_PRIVATE)
+    SharedPreferences.Editor editor = mPreferences.edit()
+    editor.apply()
+
 Q: Android SDK to create a menu using java
 A:  getMenuInflater().inflat(..)
     public boolean onOptionsItemSelected
