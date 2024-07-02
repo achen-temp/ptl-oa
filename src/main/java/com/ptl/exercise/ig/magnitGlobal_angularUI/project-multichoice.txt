@@ -28,3 +28,9 @@ A:  It makes the div resizable by the user.
 
 Q:  define a token such that it is same as string token but generates unique value every time
 A:  Injector.create
+
+Q:  select all the new items introduced in HTML5
+A:  Drag and Drop
+A:  2D drawing on a web page
+A:  Time media playback
+A:  New semantics like <section>, <article>, <footer>, etc.

@@ -66,3 +66,13 @@
     A: O(m + n)
 27: What is big(O) annotation?
     A: is the upper bound growth rate of an algorithm
+28. A public data member with the same name is provided in the base and its derived classes, which of the following is true?
+    A: The program will compile, and this feature is called 'hiding' or 'shadowing'
+29. Function<Integer, Integer> function = x -> x.sream().map(i -> i * 2)
+    A: 6000
+30: Java Streams output of class Weather
+    A: weathers.stream().sorted((p1, p2) -> p1.getTemperature().compareTo(p2.getTemperature())).forEach(System.out::println);
+31: Which of the following are true about the Error and Exception classes?
+    A: Both classes extend Throwable
+32: Java classes which statement is true?
+    A: Static memeber classes can contain non-static methods.
