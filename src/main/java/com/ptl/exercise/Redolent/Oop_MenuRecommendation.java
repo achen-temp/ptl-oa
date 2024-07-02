@@ -88,7 +88,7 @@ class MenuRecommendation implements IMenuRecommendation {
             }
 
             recommendedItem = queue.poll();
-            if(recommendedItem.numberOfPeopleWhoRatedId == 0){
+            if(recommendedItem == null || recommendedItem.numberOfPeopleWhoRatedId == 0 || recommendedItem.sumOfRating == 0){
                 recommendedItem = null;
             }
         }
