@@ -21,7 +21,7 @@ public class RestAPI_BodyTemperature {
         System.out.println(result);
     }
 
-    //this code is not tested in hackerrank************
+    //this code is tested in hackerrank************
 
     //this is on top of the method, make sure it is HTTPS, not HTTP
     public static final String URL = "https://jsonmock.hackerrank.com/api/medical_records";

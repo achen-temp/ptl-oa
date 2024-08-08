@@ -1,0 +1,10 @@
+Q:  The Map Interface: the map interface is implemented by which of the following classes?
+A:  HashMap
+A:  TreeMap
+
+Q:  The diagram shows the control flow of a typical hadoop job execution when a user submits a job to a Hadoop cluster
+A:  A key and a list of all values associated with that key
+
+Q:  MapReduce Logical Control Flow diagram. What is true about combine statge, if present?
+A:  It performs the same operation as Reduce.
+
