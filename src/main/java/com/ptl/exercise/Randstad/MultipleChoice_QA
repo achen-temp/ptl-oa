@@ -40,7 +40,7 @@ SET2::::
 3.  Spring boot - student management system
     A:  @EnableWebSecurity
         extends WebSecurityConfigurerAdapter
-        auth.authenticationBuilder
+        auth.AuthenticationManagerBuilder myauth
 4.  NoSQL - update marks in the subject "English" roo = 5
     A:  Cluster.builder().addContactPoint("127....")
         Session session = cluster.connect(dbName/keyspace) or newSession()
@@ -64,8 +64,8 @@ SET2::::
         }
 7.  java: cleanTxtFiles() remove all non alphabet characters from .txt file
     A:  Files.walkFileTree(path, new SimpleFileVisitor(startPath)
-        FileWriter
-        the one contains "flush" in the end
+        BufferedWriter
+        line -> line.replaceAll..
 8.  MongoDB
     A:  mapReduce
         map

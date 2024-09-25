@@ -34,3 +34,10 @@ A:  Drag and Drop
 A:  2D drawing on a web page
 A:  Time media playback
 A:  New semantics like <section>, <article>, <footer>, etc.
+
+Q:  valid statements
+A:  a[href^="#"] { background-color: gold; }
+A:  a[href] { background-color: gold; } 
+
+Q:  Add shadow to text
+A:  h1 { text-shadow: 5px 5px; }

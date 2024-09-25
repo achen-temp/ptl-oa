@@ -8,10 +8,10 @@ public class TravelCompanyWeatherPlatform {
 /* 
 @RestController
 @RequestMapping("/weather")   //fix1: dont forget this line
-class WeatherController {
+class WeatherApiRestController {
 
     
-    //remember to import for all the annotations if not auo-imported
+    //remember to import for all the annotations when you type if not auo-imported
 
     //fill all below to the controller class
     @Autowired
