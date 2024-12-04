@@ -1,0 +1,35 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Interview",
+            "request": "launch",
+            "mainClass": "com.ptl.exercise.aaliveinterview.Interview",
+            "projectName": "Demo"
+        },
+        {
+            "type": "java",
+            "name": "RectangularMatrix2",
+            "request": "launch",
+            "mainClass": "com.ptl.exercise.inspyr.RectangularMatrix2",
+            "projectName": "Demo"
+        },
+        {
+            "type": "java",
+            "name": "RectangularMatrix",
+            "request": "launch",
+            "mainClass": "com.ptl.exercise.inspyr.RectangularMatrix",
+            "projectName": "Demo"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-DemoApplication<Demo>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.ptl.exercise.DemoApplication",
+            "projectName": "Demo",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

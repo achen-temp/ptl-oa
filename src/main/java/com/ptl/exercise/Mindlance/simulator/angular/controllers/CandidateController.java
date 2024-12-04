@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/* 
 @RestController
 public class CandidateController {
 
@@ -114,3 +115,5 @@ public class CandidateController {
         return lst2;
     }
 }
+
+*/

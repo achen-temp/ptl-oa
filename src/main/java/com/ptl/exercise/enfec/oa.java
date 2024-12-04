@@ -32,6 +32,11 @@ public class oa {
      * Result: OPEN a webbrowser and enter: http://localhost:8080/user/1  should return the correct result.
      */
 
+     /**
+      * Coding: Given a string, return characters with min and max count
+      * hello word,   min = [h, e, w, r, d], max = [l, o]
+      */
+
     /**
      * 3. Difference between thread Wait and Sleep
      * 4. Difference between Enumeration and Iterator
@@ -40,6 +45,7 @@ public class oa {
      * 7. What is lambda expression and given me one example about it
      * 8. Tell me what do you know about authorization and authentication? (how do you do security)
      * 9. What is the AWS cloud experience do you have?
+     * 10.What are the annotations you have used in spring boot
      */
 
 }

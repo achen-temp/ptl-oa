@@ -1,0 +1,13 @@
+1. your undertsanding of microsrvcie
+2. what kinda of communication methods can be used for each of the sync and async communications
+3. have you used on security, if is it anonymous data, how do you secure it, if it is personalized data, what security will you use.
+4. Oauth2, what is name of google called? (authorization server)
+5. does the authornization server has to be 3rd party?
+6. benefits of hosting your own authorization server?
+7. what is containerization and how is used in context of microservices
+8. how do you manage these containers
+9. system design: design a microservice, where user can login to see if the car door is open or closed, 
+or to check when was last time the door was closed,  
+consider you may extend it with more features like odometer check in future, 
+or you want to check current temperature and temperature hisotry, 
+make it a distributed system, draw the high level picture in hackerrank white board.

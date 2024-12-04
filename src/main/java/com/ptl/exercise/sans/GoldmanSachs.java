@@ -45,7 +45,8 @@ P1:: find longest uniform substring return its two element aray,
 example: abbbccda, return [1,3] because bbb is longest uniform, bbb starts at index 1 and length is 3
 FOLLOW UP: 1. add more test cases 2)time and space complexity
 
-P2:: two dimensional array represents rocks, you are a rock collector, given origin and destination, 
+P2:: ROCKER COLLECTOR
+two dimensional array represents rocks, you are a rock collector, given origin and destination, 
 you can only go up or right direction, find the maxmium rocks you can collect
         {{0, 0, 0, 0, 5}, Destination
          {0, 1, 1, 1, 0}
@@ -66,7 +67,8 @@ primeFactorization(5) == [5]
 primeFactorization(12) == [2,2,3]
 FOLLOW UP: 1. add more test cases 2)time and space complexity
 
-Coding2: Given two dimensional array [student name, test score], test score can be positive or negative
+Coding2: Student Avg Grade
+Given two dimensional array [student name, test score], test score can be positive or negative
 find the highest average score. If you end up average score is not integer, use floor function to return
 the largest integer less than or equal to the average
 return 0 for empty input
@@ -92,3 +94,20 @@ U means go right, D is down, L is left, R is right. Determine the final location
 
  */
 
+/*
+ * August/September 2024
+ * 
+ * Coding 1: World Shortest Distance 
+ *   >  first interview: asks to fix the problem so all tests pass - the main problem is when the input
+ *      input words end with puncs, it would be hard to split
+ *   >  second interview: asks to write the coding from scratch
+ *   KEY NOTES: As lnog as you can past their given test cases, it will be fine, Donot overthink for all possible scenairos
+ *              See another file for details
+ * 
+ * Coding 2: Rocker Colletor as above
+ * Coding 3: Student Avg Grade as above
+ * Coding 4: String to Integer (atoi)
+ *  >   They give a simple for loop and a wrong test case, you need to implement atoi by yourself and
+ *      also self define all possible test cases. It is not hard.
+ * 
+ */

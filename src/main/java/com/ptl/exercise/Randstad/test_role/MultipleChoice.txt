@@ -46,3 +46,32 @@ A:
 
 Q: Selenium webDriver supported navigation methods
 A: 
+
+Q: Selenium: Design a Selenium Hub for the WebDriver with the following constraints, 1, 2,, 3, 4
+A:  "maxSession": 5,   //Set to 5 to restrict the number of concurrent test scripts to five.
+A:  "maxInstances": 4,   //Set to 4 to limit the number of browser instances.
+A:  "capabilityMatcher": "org.openqa.grid.internal.utils.DefaultCapabilityMatcher",
+
+Q: Java: Output of following code, Bar b,   Bar b1,  update(),  new Test()
+A: 20 20 20 20
+
+Q: API testing: REST HTTP test
+A:  Sending a GET request would retrieve items from the database.
+A:  Sending a PUT request would update the existing items in the database.
+A:  Sending a POST request would add a new item to the database.
+
+Q: E2E Testing, you are a tester in an organzation that develops game
+PART A: The test strategy should include sanity and automated regression testing.
+PART B: The strategy should include E2E tests.
+PART C:
+Automated regression testing
+Automated E2E scenarios
+Automated API testing
+
+Q: Selenium: a user is working on an e-commerce website. and while cliking a link, a new tab opens up
+A: List<String> winHandles = new ArrayList<>(driver.getWindowHandles());
+driver.switchTo().window(winHandles.get(1));  // Switches to the second window/tab
+for(String winHandle : winHandles) {
+    System.out.println(driver.getTitle());
+    break;
+}

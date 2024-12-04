@@ -1,5 +1,6 @@
 package com.ptl.exercise.TMobile;
 
+/* 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.cassandra.core.cql.Ordering;
 import org.springframework.data.cassandra.core.cql.PrimaryKeyType;
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+*/
 /**
  * Write a controller to receive a Rest request, with basic auth, and clientId, and content type json headers,
  * store all the details to a database  --- POST
@@ -22,6 +23,8 @@ import org.springframework.web.bind.annotation.RestController;
  * Assume this is in a spring boot application, application.properties is loaded etc.
  */
 //TODO: #1 write controller class first
+
+/* 
 @RestController
 @RequestMapping("/codeTest")
 class CodeTestController {
@@ -34,9 +37,9 @@ class CodeTestController {
             repo.save(request);
         } catch (Exception e) {
             //500
-            if (/*e.getCode()*/e.getMessage() == "204") {
+            if (e.getMessage() == "204") {
                 return new ResultDTO("Result", "No Content");
-            } else if (/*e.getCode()*/e.getMessage() == "500") {
+            } else if (e.getMessage() == "500") {
                 return new ResultDTO("Result", "Error while processing request");
             }
         }
@@ -104,6 +107,7 @@ class CodeTestRequest {
     }
 }
 
+
 /**
  * #################################################################
  * # application.properties
@@ -133,6 +137,8 @@ class CodeTestRequest {
  * 404 Profile not found
  * 500 Error while processing request
  */
+
+ /* 
 public class Rest {
 }
 
@@ -146,5 +152,9 @@ class AliceMiao{
      * 3. phone number should be 10 digits, otherwise return 400 BAD REQUEST
      * 4. if there is error creating the new customer, return 500 INTERNAL SERVER ERROR
      */
-
+/* 
 }
+
+*/
+
+
