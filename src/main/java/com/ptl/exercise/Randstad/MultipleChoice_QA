@@ -53,8 +53,8 @@ SET2::::
             public CarService carService(){...}
         }
 6.  java: Basic String Manipulation -- 必要快速写
-    A:  for(int i = 0; i < strl.length(); i++){
-            char c = strl.length();
+    A:  for(int i = 0; i < str1.length(); i++){
+            char c = str1.charAt(i);
             if(Character.isLowerCase(c)){
                 newStr.setCharAt(i, Character.toUpperCase(c));
             }
