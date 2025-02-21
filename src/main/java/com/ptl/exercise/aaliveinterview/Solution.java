@@ -1,5 +1,8 @@
 package com.ptl.exercise.aaliveinterview;
 
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+
 public class Solution {
     public static int solution(String s) {
         // Use a pointer to simulate stack behavior
@@ -20,8 +23,10 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        System.out.println(solution("01010")); // Output: 1
-        System.out.println(solution("111000")); // Output: 0
-        System.out.println(solution("111*000")); // Output: 7
+        String str = "kayak";
+        boolean result = Stream.iterate(0, i -> i + 1)
+            .limit(str.length())
+            .anyMatch(i -> str.charAt(i) == str.charAt(str.length() - i - 1));
+        System.out.println(result);
     }
 }

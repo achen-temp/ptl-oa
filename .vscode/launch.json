@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Solution",
+            "request": "launch",
+            "mainClass": "com.ptl.exercise.aaliveinterview.Solution",
+            "projectName": "Demo"
+        },
+        {
+            "type": "java",
             "name": "Interview",
             "request": "launch",
             "mainClass": "com.ptl.exercise.aaliveinterview.Interview",

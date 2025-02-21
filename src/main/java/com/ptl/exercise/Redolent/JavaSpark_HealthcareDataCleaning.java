@@ -1,6 +1,6 @@
 package com.ptl.exercise.Redolent;
 
-public class JavaSpark_BankDataCleaning {
+public class JavaSpark_HealthcareDataCleaning {
     
 }
 
@@ -11,7 +11,10 @@ import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Encoders;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
-import org.apache.spark.sql.functions.*;
+import static org.apache.spark.sql.functions.col;
+import static org.apache.spark.sql.functions.concat_ws;
+
+//要注意上面的import要有
 
 public class DataCleaningJob extends JobBase {
 
@@ -33,11 +36,15 @@ public class DataCleaningJob extends JobBase {
 
     @Override
     public Dataset<Medical> generateFullName(Dataset<Eligibility> eligibilityDs, Dataset<Medical> medicalDs) {
-        Dataset<Row> eligibilityWithFullName = eligibilityDs.withColumn("fullName",
-                concat_ws(" ", col("firstName"), col("lastName")));
-        return medicalDs.join(eligibilityWithFullName, "memberId")
-                .select(medicalDs.col("*"), eligibilityWithFullName.col("fullName"))
-                .as(Encoders.bean(Medical.class));
+        Dataset<Row> medicalCleaned = medicalDs.withColumnRenamed("fullName", "medicalFullName");
+
+        Dataset<Row> eligibilityWithFullName = eligibilityDs.withColumn("eligibilityFullName",
+            concat_ws(" ", col("firstName"), col("lastName")));
+
+        return medicalCleaned.join(eligibilityWithFullName, "memberId")
+            .drop("medicalFullName") 
+            .withColumnRenamed("eligibilityFullName", "fullName")
+            .as(Encoders.bean(Medical.class));
     }
 
     @Override
