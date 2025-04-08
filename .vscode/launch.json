@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Oop_VehicleOperationsManagement",
+            "request": "launch",
+            "mainClass": "com.ptl.exercise.Walmart.Oop_VehicleOperationsManagement",
+            "projectName": "Demo"
+        },
+        {
+            "type": "java",
+            "name": "WordShortestDistance",
+            "request": "launch",
+            "mainClass": "com.ptl.exercise.sans.WordShortestDistance",
+            "projectName": "Demo"
+        },
+        {
+            "type": "java",
             "name": "Solution",
             "request": "launch",
             "mainClass": "com.ptl.exercise.aaliveinterview.Solution",

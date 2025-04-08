@@ -26,7 +26,7 @@ public class WordShortestDistance {
                 word2Loc = index + (word.length() / 2.0);
                 char lastChar = word.charAt(word.length() - 1);
                 if(lastChar < 'a' || lastChar > 'z'){
-                    word1Loc += 1 / 2.0;
+                    word2Loc -= 1 / 2.0;
                 }
             }
     

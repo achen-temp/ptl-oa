@@ -76,3 +76,18 @@
     A: Both classes extend Throwable
 32: Java classes which statement is true?
     A: Static memeber classes can contain non-static methods.
+33: Java Socket
+    A:  String str = "kayak";
+        boolean result = Stream.iterate(0, i -> i + 1)
+            .limit(str.length())
+            .anyMatch(i -> str.charAt(i) == str.charAt(str.length() - i - 1));
+        System.out.println(result);
+    A:  String str = "kayak";
+        boolean result = IntStream.range(0, str.length()/2)
+            .noneMatch(i -> str.charAt(i) != str.charAt(str.length() - i - 1));
+        System.out.println(result);
+    A:  String str = "kayak";
+        boolean result = IntStream.range(0, str.length())
+            .anyMatch(i -> str.charAt(i) == str.charAt(str.length() - i - 1));
+        System.out.println(result);
+

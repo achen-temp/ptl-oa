@@ -19,7 +19,7 @@ Q:  select any invalid declarations for a pseduo-element
 A:  span::last-line{...}
 A:  .header::after-first-line{...}
 
-Q:  seelct the valid css3 transofrmation statemetns
+Q:  select the valid css3 transofrmation statemetns
 A:  matrix()
 A:  rotate()
 
@@ -41,3 +41,8 @@ A:  a[href] { background-color: gold; }
 
 Q:  Add shadow to text
 A:  h1 { text-shadow: 5px 5px; }
+
+Q:  app-card selector
+A:  <app-card>
+    <div class="header"><h1>Angular</h1></div>
+    </app-card>

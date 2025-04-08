@@ -111,3 +111,10 @@ U means go right, D is down, L is left, R is right. Determine the final location
  *      also self define all possible test cases. It is not hard.
  * 
  */
+
+ /*
+ //3/7/2025 william long
+ 1. asked how kafka is used, how to keep mesage in chain/order,  how kfaka assign parition, how to solve consumer lagging
+ 2. coding: merge two sorted array
+ 3. coding: Leetcode: Next Permutation   {1,3,2} -> {2,1,3};  {3,2,1} -> {1,2,3}(no next)
+ */

@@ -26,6 +26,7 @@ interface IMenuRecommendation {
 
 //this code is not tested in hackerrank
 //your coding starts from here ........
+//pass 3/6
 class MenuRecommendation implements IMenuRecommendation {
     Map<Integer, MenuItem> inStockItems = new HashMap<>();
     Map<Integer, MenuItem> outOfStockItems = new HashMap<>();
