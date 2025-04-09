@@ -46,3 +46,13 @@ Q:  app-card selector
 A:  <app-card>
     <div class="header"><h1>Angular</h1></div>
     </app-card>
+
+Q:  Which code produces the following? Width and height are 100px. (Coding is Fun)
+A:  <fieldSet style="height:100px;width:100px"><legend>Coding is Fun</Legend></fieldSet>
+
+Q:  select all the new items introduced in HTML5;
+A:  Drag and Drop
+A:  2D drawing on a web page
+A:  Time media playback
+A:  New Semantics like <section>,<article>,<footer> etc
+
