@@ -53,15 +53,27 @@ SET2::::
             public CarService carService(){...}
         }
 6.  java: Basic String Manipulation -- 必要快速写
-    A:  for(int i = 0; i < str1.length(); i++){
-            char c = str1.charAt(i);
-            if(Character.isLowerCase(c)){
-                newStr.setCharAt(i, Character.toUpperCase(c));
+    A:  public static void main(String[] args) {
+            Scanner in = new Scanner(System.in);
+            String input = in.nextLine();  // Read the input string
+            StringBuilder result = new StringBuilder();
+
+            for (int i = 0; i < input.length(); i++) {
+                char c = input.charAt(i);
+
+                if (Character.isUpperCase(c)) {
+                    result.append(Character.toLowerCase(c));
+                } else if (Character.isLowerCase(c)) {
+                    result.append(Character.toUpperCase(c));
+                } else {
+                    result.append(c);  // Keep non-letter characters as-is
+                }
             }
-            else if(Character.isUpperCase(c)){
-                newStr.setCharAt(i, Character.toLowerCase(c));
-            }
+
+            System.out.println(result.toString());
         }
+
+
 7.  java: cleanTxtFiles() remove all non alphabet characters from .txt file
     A:  Files.walkFileTree(path, new SimpleFileVisitor(startPath)
         BufferedWriter

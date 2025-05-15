@@ -1,5 +1,7 @@
 package com.ptl.exercise.aaliveinterview;
 
+import java.util.HashSet;
+import java.util.Set;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -22,11 +24,43 @@ public class Solution {
         return pointer + 1; // The size of the remaining characters represents the smallest string length
     }
 
+
+    public static int longestSubstring(String s) {
+      if(s == null || s.length() == 0){
+           return 0;
+      }
+      Set<Character> set = new HashSet<>();
+      
+      int left = 0;
+      int right = 0;
+      int longest = Integer.MIN_VALUE; //hold result
+      String result = "";
+      
+      while(left <= right && left < s.length() && right < s.length()){
+            char c = s.charAt(right);
+            //below we check if c is already in set, if not, we update "longest"
+            if( ! set.contains(c)){
+                 set.add(c);
+                 right++;
+                // longest = Math.max(longest, right - left); //update longest
+                if(right - left > longest){
+                    longest = right - left;
+                    result = s.substring(left, right);
+                }
+            }else{ //c is already in set, we need to move left to shrink the window
+                 char leftChar = s.charAt(left);
+                 set.remove(leftChar);
+                 left++;  //update left and remove left character from set
+            }
+      }
+
+      System.out.println(result);
+      return longest;
+   
+    }
+
+
     public static void main(String[] args) {
-        String str = "kayak";
-        boolean result = Stream.iterate(0, i -> i + 1)
-            .limit(str.length())
-            .anyMatch(i -> str.charAt(i) == str.charAt(str.length() - i - 1));
-        System.out.println(result);
+        System.out.println(longestSubstring("abcabcdabc"));
     }
 }
