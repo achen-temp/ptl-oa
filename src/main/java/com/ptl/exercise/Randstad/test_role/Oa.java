@@ -1,4 +1,4 @@
-package com.ptl.exercise.Randstad.test_role;
+package com.ptl.exercise.randstad.test_role;
 
 import java.util.ArrayList;
 import java.util.Arrays;

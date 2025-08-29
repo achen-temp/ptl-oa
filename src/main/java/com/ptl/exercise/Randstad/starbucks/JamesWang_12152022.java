@@ -1,4 +1,4 @@
-package com.ptl.exercise.Randstad.starbucks;
+package com.ptl.exercise.randstad.starbucks;
 
 import java.util.Arrays;
 import java.util.Map;

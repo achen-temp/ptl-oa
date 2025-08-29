@@ -1,4 +1,4 @@
-package com.ptl.exercise.Redolent;
+package com.ptl.exercise.redolent;
 
 import org.json.simple.JSONArray; //must have
 import org.json.simple.JSONObject; //must have

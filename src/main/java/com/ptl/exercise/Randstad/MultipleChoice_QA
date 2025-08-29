@@ -77,7 +77,7 @@ SET2::::
 7.  java: cleanTxtFiles() remove all non alphabet characters from .txt file
     A:  Files.walkFileTree(path, new SimpleFileVisitor(startPath)
         BufferedWriter
-        line -> line.replaceAll..
+        line -> line.replaceAll(s ->)..flush)
 8.  MongoDB
     A:  mapReduce
         map

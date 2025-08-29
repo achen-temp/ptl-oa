@@ -1,13 +1,10 @@
 package com.ptl.exercise;
 
-import jnr.ffi.annotations.In;
-
 import java.io.IOException;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
-import java.sql.SQLOutput;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -317,6 +314,8 @@ class IgWalmart{
     //static List<Integer> result = new ArrayList<>(); //host results
 
     //find all combinations that can get total amount and then select the one with shortest length
+    //coins : type of coins;   size: available quantity of each corresponding coin type
+    //amount: bill to exchange
     public static List<Integer> calculateCoins(int[] coins, int[] size, int amount){
         List<List<Integer>> result = new ArrayList<>();
         //dfs(coins, size,0, amount, new ArrayList<>(), result);

@@ -1,0 +1,40 @@
+Q:  User wants to show only Brazil time in an application
+A:  function display_ct() {
+    var x = new Date("en-US", { timeZone: "America/Sao_Paulo" });
+    var x1 = x.getMonth() + 1 + "/" + x.getDate() + "/" + x.getYear();
+    x1 = x1 + " - " + x.getHours() + ":" + x.getMinutes() + ":" + x.getSeconds();
+    document.getElementById('ct').innerHTML = x1;
+    tt = display_c();
+}
+
+Q:  DevOps - Git, How can you start git merge tool when any merge conflict occurs?
+A:  git mergetool
+
+Q:  Jenkins Pipeline Script
+A:  echo "JAVA_HOME = ${JAVA_HOME}"
+    sh 'mvn -Dmaven.test.failure.ignore=true install'
+    sh 'mvn test'
+
+Q:  Output of class Test with Bar b = new Bar(); Bar b1 = new Bar(); update(b); update(b1);
+A:  20 20 20 20
+
+Q:  create a centralized Exception handler in spring
+A:  @RestControllerAdvice
+    @ExceptionHandler(value = DataInvalidException.class)
+
+Q: JavaScript function reverseBySeparator() return
+A:  Glider to Welcome
+
+Q:  Angular code to toggleSelection() Email button
+A:  <input type="text" placeholder="Enter From" value="from"/>
+    this.isEnable = !this.isEnable;
+
+Q:  Angular 12: update a background image to the "i tag"
+A:  background-image: url(/foo/bar/baz.jpeg);
+
+Q:  initialize StringBuffer with a minimum capacity of 55 and inserts the character "c" in the first index 
+A:  stringBuffer.ensureCapacity(55);
+    stringBuffer.insert(0, 'c');
+
+Q:  Spring boot: which template will you utilize for using transactions in spring boot?
+A:  TransactionTemplate

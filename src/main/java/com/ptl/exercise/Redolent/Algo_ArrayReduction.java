@@ -1,4 +1,4 @@
-package com.ptl.exercise.Redolent;
+package com.ptl.exercise.redolent;
 
 import java.util.Arrays;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.ptl.exercise.Redolent;
+package com.ptl.exercise.redolent;
 
     //this code is tested in hackerrank
 public class Sql_VisitorsBehaviorReport2 {

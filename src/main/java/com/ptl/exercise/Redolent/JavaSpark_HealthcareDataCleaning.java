@@ -1,4 +1,4 @@
-package com.ptl.exercise.Redolent;
+package com.ptl.exercise.redolent;
 
 public class JavaSpark_HealthcareDataCleaning {
     

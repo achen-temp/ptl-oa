@@ -1,17 +1,14 @@
-package com.ptl.exercise.Randstad;
+package com.ptl.exercise.randstad;
 
 import org.springframework.web.bind.annotation.PathVariable;
 
 import javax.cache.configuration.MutableConfiguration;
 import javax.cache.spi.CachingProvider;
-import javax.print.attribute.standard.Media;
 import javax.ws.rs.*;
 import javax.ws.rs.client.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import javax.cache.*;
 

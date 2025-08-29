@@ -1,4 +1,4 @@
-package com.ptl.exercise.Randstad;
+package com.ptl.exercise.randstad;
 
 import java.util.Arrays;
 import java.util.Collections;

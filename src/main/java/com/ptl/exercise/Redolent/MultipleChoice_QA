@@ -77,17 +77,36 @@
 32: Java classes which statement is true?
     A: Static memeber classes can contain non-static methods.
 33: Java Socket
-    A:  String str = "kayak";
-        boolean result = Stream.iterate(0, i -> i + 1)
-            .limit(str.length())
-            .anyMatch(i -> str.charAt(i) == str.charAt(str.length() - i - 1));
-        System.out.println(result);
-    A:  String str = "kayak";
-        boolean result = IntStream.range(0, str.length()/2)
-            .noneMatch(i -> str.charAt(i) != str.charAt(str.length() - i - 1));
-        System.out.println(result);
-    A:  String str = "kayak";
-        boolean result = IntStream.range(0, str.length())
-            .anyMatch(i -> str.charAt(i) == str.charAt(str.length() - i - 1));
-        System.out.println(result);
+    A  try {
+            Socket socket = new Socket("localhost", 7000);
+            PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+            BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            
+            out.println("hello");
+            
+            String userInput;
+            while ((userInput = in.readLine()) != null) {
+                System.out.println(userInput);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
+
+34: Display Boolean
+        A: String str = "kayak";
+    boolean result = IntStream.range(0, str.length() / 2)
+        .noneMatch(i -> str.charAt(i) == str.charAt(str.length() - i - 1));
+    System.out.println(result);
+    A: String str = "kayak";
+boolean result = Stream.iterate(0, i -> i + 1)
+    .limit(str.length() / 2)
+    .noneMatch(i -> str.charAt(i) != str.charAt(str.length() - i - 1));
+System.out.println(result);
+35: Field Names in Classes
+    A:  
+
+36: Bitwise Operators in Java // int x = 3&5; int y = 3|5
+    A:  1,7
+37: Automatic Imports : java.lange, java.io and java.util
+    A: False (io is not auto import)

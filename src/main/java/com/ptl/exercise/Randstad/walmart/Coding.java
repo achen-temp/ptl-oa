@@ -1,4 +1,4 @@
-package com.ptl.exercise.Randstad.walmart;
+package com.ptl.exercise.randstad.walmart;
 
 import java.util.*;
 
