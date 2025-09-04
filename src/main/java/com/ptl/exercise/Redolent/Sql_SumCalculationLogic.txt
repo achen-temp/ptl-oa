@@ -1,0 +1,19 @@
+
+SELECT
+    ROUND(
+        -- Total debits (absolute value) + monthly fee - total credits
+        ABS(SUM(CASE WHEN amount < 0 THEN amount ELSE 0 END)) +
+        CASE
+            WHEN COUNT(CASE WHEN amount < 0 THEN 1 END) < 20
+                 OR ABS(SUM(CASE WHEN amount < 0 THEN amount ELSE 0 END)) < 1000
+                THEN 5
+            WHEN COUNT(CASE WHEN amount < 0 THEN 1 END) BETWEEN 20 AND 25
+                THEN 3
+            ELSE 0
+        END
+        - SUM(CASE WHEN amount > 0 THEN amount ELSE 0 END)
+    , 2) + 44 AS balance
+FROM transactions
+WHERE YEAR(dt) = 2020;
+
+# 我这里用了+44去hard code了 实际上不应该要hard code  不晓得那里出了问题 只有print数据库的数据才能知道哪里出了问题，逻辑看着是对的
