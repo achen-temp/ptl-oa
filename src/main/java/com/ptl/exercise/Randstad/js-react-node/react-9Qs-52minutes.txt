@@ -1,0 +1,66 @@
+Q: What happens when the following render() method is executed? ["Ruby","ES6","Scala"]
+A:  A warning is logged that a key should be specified for each item in the iteration.
+    The list of languagtes is outputted.
+
+Q: logs the first element of the "clients" array using Mobix
+A:  return <h1>{this.props.store.clients[0]}</h1>;
+    var store = window.store = new storeMobix();
+
+Q: output of when user clicks on "My Button"?
+A:  true
+
+Q:  React: component that reverses the submitted text 
+A:  reversedText: text.split("").reverse().join("")
+    onChange={this.handleChange}
+    <p>Reversed Text: {this.state.reversedText}</p>
+
+Q:  React RoutingComp: fruit, apple, unhandled NoMatch
+A:  <Redirect from="/fruit" to="/apple" />
+    <Route component={NoMatch} />
+    No match for <code> {location.pathname} </code>
+
+Q:  ReactJs, sens a form to the server
+A:  return fetch('http://localhost'
+    this.props.save(
+        this.elem.value);
+
+Q:  Design Patterns 3 parts output 1. true  1. bicycle has 2 wheels auto has 4 wheels  1. $64500
+A:  const Singleton = (() => {...})
+    const Factory = (() => {...})
+    Auto.decorator = function(auto){}
+
+Q:  Topic: CSS -- center align an element of unkonw width and height
+A:  .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+
+        border: 5px solid black;
+        background-color: rgb(173,216,230);
+        padding: 10px;
+    }
+
+Q:  Find and Replace
+A:  function replace() {
+        const text = document.getElementById('text').value;
+        const find = document.querySelector('.find').value;
+        const replacement = document.querySelector('.replace').value;
+
+        let result = '';
+        let i = 0;
+        const findLength = find.length;
+
+        while (i <= text.length - findLength) {
+            if (text.substring(i, i + findLength) === find) {
+                result += replacement;
+                i += findLength;
+            } else {
+                result += text[i];
+                i++;
+            }
+        }
+
+        result += text.substring(i);
+        return result;
+    }

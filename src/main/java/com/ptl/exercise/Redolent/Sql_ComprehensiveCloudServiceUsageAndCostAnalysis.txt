@@ -1,0 +1,35 @@
+package com.ptl.exercise.redolent;
+
+
+SELECT
+  t.service_type,
+  t.service_name,
+  CONCAT('$', CAST(t.price_per_second_num AS DECIMAL(10,2))) AS price_per_second,
+  SEC_TO_TIME(t.total_seconds)                    AS total_usage,
+  CONCAT('$', CAST(t.total_cost_num AS DECIMAL(18,2)))        AS total_cost
+FROM (
+  /* PaaS */
+  SELECT
+    'PaaS' AS service_type,
+    p.name AS service_name,
+    p.price_per_second                      AS price_per_second_num,
+    SUM(u.usage_seconds)                    AS total_seconds,
+    SUM(u.usage_seconds) * p.price_per_second AS total_cost_num
+  FROM paas p
+  JOIN paas_usage u ON u.service_id = p.id
+  GROUP BY p.id, p.name, p.price_per_second
+
+  UNION ALL
+
+  /* SaaS */
+  SELECT
+    'SaaS' AS service_type,
+    s.name AS service_name,
+    s.price_per_second                      AS price_per_second_num,
+    SUM(u.usage_seconds)                    AS total_seconds,
+    SUM(u.usage_seconds) * s.price_per_second AS total_cost_num
+  FROM saas s
+  JOIN saas_usage u ON u.service_id = s.id
+  GROUP BY s.id, s.name, s.price_per_second
+) AS t
+ORDER BY t.total_cost_num DESC;
