@@ -1,0 +1,21 @@
+SELECT
+    'CPU' AS resource_type,
+    application_id,
+    ROUND(AVG(usage_percentage), 2) AS average_usage_percentage
+FROM cpu_metrics
+WHERE dt LIKE '2024-02%'
+GROUP BY application_id
+HAVING AVG(usage_percentage) > 50
+
+UNION ALL
+
+SELECT
+    'Memory' AS resource_type,
+    application_id,
+    ROUND(AVG(usage_percentage), 2) AS average_usage_percentage
+FROM memory_metrics
+WHERE dt LIKE '2024-02%'
+GROUP BY application_id
+HAVING AVG(usage_percentage) > 50
+
+ORDER BY application_id ASC, resource_type ASC;
